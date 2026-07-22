@@ -1,0 +1,212 @@
+/* ============================================================
+   archive.css
+   Styles specific to the archive page.
+   Relies on base tokens from style.css.
+   ============================================================ */
+
+/* Header */
+.archive-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-home-link {
+  text-decoration: none;
+}
+
+.archive-title-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-left: 1px solid var(--border-default);
+  padding-left: var(--sp-3);
+}
+
+/* Main layout */
+.archive-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--sp-8) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.archive-top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.archive-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.archive-sub {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Filters */
+.archive-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.filter-btn {
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--amber-bg);
+  border-color: var(--amber-border);
+  color: var(--amber-light);
+}
+
+/* Loading state */
+.archive-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--sp-12) 0;
+  gap: var(--sp-3);
+}
+
+/* Case grid */
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3);
+}
+
+/* Case card */
+.case-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5);
+  text-decoration: none;
+  color: inherit;
+  gap: var(--sp-4);
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.case-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-default);
+  transform: translateX(2px);
+}
+
+.case-card.hidden {
+  display: none;
+}
+
+.case-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  min-width: 0;
+}
+
+.case-card-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--amber);
+  letter-spacing: 0.04em;
+}
+
+.case-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.case-card-meta {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: var(--r-full);
+  border: 1px solid;
+}
+
+.tag-easy     { color: var(--green);  background: var(--green-bg);  border-color: var(--green-border); }
+.tag-medium   { color: var(--amber-light); background: var(--amber-bg);  border-color: var(--amber-border); }
+.tag-hard     { color: var(--red);    background: var(--red-bg);    border-color: var(--red-border); }
+.tag-category { color: var(--text-muted); background: transparent; border-color: var(--border-default); }
+
+.case-card-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: color var(--t-fast), transform var(--t-fast);
+}
+
+.case-card:hover .case-card-arrow {
+  color: var(--text-primary);
+  transform: translateX(2px);
+}
+
+/* Empty state */
+.archive-empty {
+  text-align: center;
+  padding: var(--sp-12) 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Desktop */
+@media (min-width: 640px) {
+  .archive-header {
+    padding: var(--sp-4) var(--sp-8);
+  }
+
+  .archive-main {
+    padding: var(--sp-10) var(--sp-8);
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

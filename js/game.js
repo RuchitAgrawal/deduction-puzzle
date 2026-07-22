@@ -10,6 +10,7 @@
 
 var TIMER_SECONDS = 180; // 3 minutes
 var TLQ_URL = 'https://thelastquestion.com'; // placeholder until real URL is provided
+var TLQ_UTM = '?utm_source=deduction-puzzle&utm_medium=result-cta&utm_campaign=bridge';
 
 // ---- State -------------------------------------------------------------------
 
@@ -20,12 +21,14 @@ var state = {
   timerInterval:   null,
   hintUsed:        false,
   sessionId:       null,
+  practiceMode:    false, // set to true when ?practice=1 is in the URL
 };
 
 // ---- Init --------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-  state.sessionId = getOrCreateSessionId();
+  state.sessionId   = getOrCreateSessionId();
+  state.practiceMode = new URLSearchParams(window.location.search).get('practice') === '1';
 
   loadCase().then(function (caseData) {
     if (!caseData) {
@@ -36,8 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
     state.currentCase = caseData;
     renderCase(caseData);
     showScreen('screen-game');
-    startTimer();
-    trackEvent('case_viewed', { case_id: caseData.id });
+
+    if (state.practiceMode) {
+      // Hide the timer and disable countdown in practice mode
+      document.getElementById('timer').style.display = 'none';
+    } else {
+      startTimer();
+    }
+
+    trackEvent('case_viewed', { case_id: caseData.id, practice: state.practiceMode });
   });
 });
 
@@ -127,13 +137,17 @@ function renderCase(caseData) {
   document.getElementById('case-title').textContent = caseData.title;
   document.getElementById('case-intro').textContent = caseData.intro;
   document.getElementById('case-id-badge').textContent = caseData.id.toUpperCase();
-  document.getElementById('tlq-link').href = TLQ_URL;
+  document.getElementById('tlq-link').href = TLQ_URL + TLQ_UTM;
 
   renderSuspects(caseData.suspects);
   renderClues(caseData.clues);
 
   if (caseData.hint) {
     document.getElementById('hint-area').classList.remove('hidden');
+  }
+
+  if (state.practiceMode) {
+    document.getElementById('case-id-badge').textContent += ' (Practice)';
   }
 }
 
