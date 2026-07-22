@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "api/*.js": {
+      "memory": 128,
+      "maxDuration": 5
+    }
+  },
+  "rewrites": [
+    { "source": "/case", "destination": "/" },
+    { "source": "/archive", "destination": "/archive.html" }
+  ]
+}
