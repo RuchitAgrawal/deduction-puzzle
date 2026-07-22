@@ -5,18 +5,9 @@
       "title": "The Missing Ledger",
       "intro": "A senior accountant at Hartley and Sons was found dead at his desk on a Monday morning. The company financial ledger had vanished from his locked office. Three people had after-hours access to the building that night.",
       "suspects": [
-        {
-          "name": "Diana Marsh",
-          "description": "Junior accountant, passed over for promotion twice this year"
-        },
-        {
-          "name": "Gerald Thorn",
-          "description": "Night security guard with a documented gambling problem"
-        },
-        {
-          "name": "Claire Sutton",
-          "description": "Senior partner's personal assistant, held a duplicate office key"
-        }
+        { "name": "Diana Marsh",   "description": "Junior accountant, passed over for promotion twice this year" },
+        { "name": "Gerald Thorn",  "description": "Night security guard with a documented gambling problem" },
+        { "name": "Claire Sutton", "description": "Senior partner's personal assistant, held a duplicate office key" }
       ],
       "clues": [
         "The office door was locked from the inside when found. The window latch was unlatched.",
@@ -35,27 +26,18 @@
       "title": "The Broken Safe",
       "intro": "A jewelry store owner was found unconscious beside his cracked safe at closing time. Around 40,000 in stones were gone. The store had been locked all day with no signs of forced entry from outside.",
       "suspects": [
-        {
-          "name": "Ray Kowalski",
-          "description": "Store manager, knew the combination and had a key to the back door"
-        },
-        {
-          "name": "Tara Bloom",
-          "description": "Part-time cashier, recently asked for a pay advance and was refused"
-        },
-        {
-          "name": "Sol Navarro",
-          "description": "Delivery contractor who made a scheduled afternoon drop that day"
-        }
+        { "name": "Ray Kowalski", "description": "Store manager, knew the combination and had a key to the back door" },
+        { "name": "Tara Bloom",   "description": "Part-time cashier, recently asked for a pay advance and was refused" },
+        { "name": "Sol Navarro",  "description": "Delivery contractor who made a scheduled afternoon drop that day" }
       ],
       "clues": [
         "The back door was unlocked from the inside. The front deadbolt was engaged.",
         "Sol Navarro signed out at 3:40 PM. The dock camera confirms he left the building at that time.",
         "Tara Bloom called in sick that morning and did not enter the store at any point during the day.",
-        "The safe shows no tool marks or sign of drilling. It was opened by someone who knew the combination."
+        "The safe shows no tool marks or drilling. It was opened by someone who knew the combination."
       ],
       "solution": "Ray Kowalski",
-      "explanation": "Sol was confirmed off-site hours before the theft window. Tara never entered the building. The absence of tool marks means the safe was opened with the combination, not forced. Ray was the only person present who knew the code, and his claim that he locked the safe before leaving cannot be reconciled with the missing stones.",
+      "explanation": "Sol was confirmed off-site hours before the theft window. Tara never entered the building. The absence of tool marks means the safe was opened with the combination, not forced. Ray was the only person present who knew the code and was unaccounted for during the relevant window.",
       "hint": "A safe with no tool marks was opened by someone who already knew the code.",
       "difficulty": "easy",
       "category": "theft"
@@ -63,37 +45,402 @@
     {
       "id": "case-003",
       "title": "The Last Train",
-      "intro": "A businessman was found dead in a first-class compartment on the 11:40 PM overnight train from Caldwell. The train made no stops between departure and the point of discovery. Three other passengers occupied nearby seats.",
+      "intro": "A businessman was found dead in a first-class compartment on the 11:40 PM overnight train from Caldwell. The train made no stops between departure and discovery. Three other passengers occupied nearby seats.",
       "suspects": [
-        {
-          "name": "Nora Vance",
-          "description": "Retired nurse traveling to visit family, seated directly across the aisle"
-        },
-        {
-          "name": "Phillip Osei",
-          "description": "Sales representative, seated directly behind the victim, a frequent rider on this route"
-        },
-        {
-          "name": "Marta Frei",
-          "description": "Academic returning from a conference, seated two rows ahead facing the rear"
-        }
+        { "name": "Nora Vance",   "description": "Retired nurse traveling to visit family, seated directly across the aisle" },
+        { "name": "Phillip Osei", "description": "Sales representative, seated directly behind the victim, a frequent rider on this route" },
+        { "name": "Marta Frei",   "description": "Academic returning from a conference, seated two rows ahead facing the rear" }
       ],
       "clues": [
         "The victim was poisoned. A fast-acting compound was introduced to his drink.",
         "The conductor observed Nora Vance sleeping in her seat from 11:55 PM until the body was discovered.",
         "Marta Frei's rear-facing seat made reaching the victim's drink impossible without passing Nora Vance, who was awake at the relevant time.",
-        "Phillip Osei ordered two drinks from the trolley service. The victim's receipt shows only one drink ordered."
+        "Phillip Osei ordered two drinks from the trolley. The victim's receipt shows only one drink ordered."
       ],
       "solution": "Phillip Osei",
-      "explanation": "Nora's alibi is confirmed by the conductor. Marta's seat position made access physically implausible. Phillip ordered two drinks when the victim ordered one, and was standing in the aisle with access to the victim's drink. The extra drink on his order points to the method of introduction.",
+      "explanation": "Nora's alibi is confirmed by the conductor. Marta's seat position made access physically implausible without passing an alert witness. Phillip ordered two drinks when the victim ordered one, pointing to an additional drink used as a vehicle for the compound introduced during his time standing in the aisle.",
       "hint": "Someone was standing near the victim's drink with an unexplained extra order.",
       "difficulty": "medium",
       "category": "alibi"
+    },
+    {
+      "id": "case-004",
+      "title": "The Gallery Fire",
+      "intro": "A fire broke out overnight in a private art gallery in the Kellerton district. Two paintings worth a combined 200,000 were missing when firefighters cleared the building. The fire was set deliberately to mask the theft.",
+      "suspects": [
+        { "name": "Owen Farris",   "description": "Gallery manager, had a master key and had recently taken out a personal loan" },
+        { "name": "Simone Greer",  "description": "Freelance restorer who had worked in the gallery three days prior" },
+        { "name": "Marcus Boyle",  "description": "Security contractor responsible for the gallery's alarm system" }
+      ],
+      "clues": [
+        "The fire originated in the storage room, which only Owen Farris and the gallery owner had keys to.",
+        "Marcus Boyle's system logs show the alarm was manually disarmed at 2:08 AM using a four-digit override code known only to Boyle and the owner.",
+        "Simone Greer's access badge had not been activated since her last legitimate visit three days ago.",
+        "Owen Farris told police he was home at 2:08 AM, but a toll camera recorded his vehicle four blocks from the gallery at 1:58 AM."
+      ],
+      "solution": "Owen Farris",
+      "explanation": "Simone had no access that night. Marcus could disarm the alarm but had no key to the storage room where the fire originated. Owen had both the storage key and was placed four blocks away ten minutes before the alarm was disarmed, contradicting his alibi.",
+      "hint": "Two things had to happen: someone had a key to the storage room and a way to kill the alarm.",
+      "difficulty": "medium",
+      "category": "theft"
+    },
+    {
+      "id": "case-005",
+      "title": "The Forged Will",
+      "intro": "An elderly widow died and left her estate to a local charity. Three days later, a second will surfaced, redirecting the estate to a distant relative. A document examiner confirmed the second will was forged.",
+      "suspects": [
+        { "name": "Harriet Cole",  "description": "The deceased's housekeeper of twelve years, left nothing in the original will" },
+        { "name": "Douglas Vane",  "description": "Distant relative who stands to inherit under the forged document" },
+        { "name": "Lena Morrow",   "description": "Estate solicitor who handled both documents" }
+      ],
+      "clues": [
+        "The forged will was printed on paper stock that matches a brand sold exclusively at a supply shop in Douglas Vane's hometown, 200 miles away.",
+        "Lena Morrow's office records show the original will was sealed and filed three months before the death. She had no contact with Douglas Vane before the death.",
+        "Harriet Cole has no record of travel, no computer at home, and no connection to the paper supplier.",
+        "Douglas Vane flew into the city two days before the widow's death and checked into a hotel four streets from the solicitor's office."
+      ],
+      "solution": "Douglas Vane",
+      "explanation": "Harriet had no means of sourcing the specific paper or printing the document. Lena's records show she filed the original will legitimately and had no prior contact with Vane. The paper stock traces directly to Vane's hometown, and his unexplained visit to the city immediately before the death placed him in position to plant the document.",
+      "hint": "The paper the forgery was printed on narrows the field considerably.",
+      "difficulty": "easy",
+      "category": "deception"
+    },
+    {
+      "id": "case-006",
+      "title": "The Riverside Club",
+      "intro": "A member of an exclusive private club was found dead in the billiards room after the evening's social concluded. The room had been locked for the final hour of the event. Three members had been seen in the corridor near the room during that hour.",
+      "suspects": [
+        { "name": "Edmund Voss",    "description": "Retired banker, had a public dispute with the victim over a debt the week before" },
+        { "name": "Clara Nighton",  "description": "Club treasurer, recently discovered the victim had been embezzling from club funds" },
+        { "name": "Peter Ashwick",  "description": "The club's junior steward, responsible for locking and unlocking all rooms that evening" }
+      ],
+      "clues": [
+        "The victim was struck from behind with a billiards cue. No struggle is evident; the victim did not see it coming.",
+        "Peter Ashwick locked the billiards room at 9:30 PM per the event log and did not reopen it until the body was found.",
+        "Edmund Voss was observed by two independent witnesses in the main lounge from 9:15 PM to 10:40 PM.",
+        "Clara Nighton left the main event at 9:20 PM, told staff she had a headache, and was not seen again until 10:45 PM."
+      ],
+      "solution": "Clara Nighton",
+      "explanation": "Peter locked the room and did not reopen it, and he had no apparent motive. Edmund has a confirmed alibi from two witnesses for the entire window. Clara disappeared from the event at 9:20 PM, ten minutes before the room was locked, and cannot account for her whereabouts during that time. Her discovery of the embezzlement gives her a strong motive.",
+      "hint": "Focus on who was unaccounted for during the hour the room was sealed.",
+      "difficulty": "medium",
+      "category": "alibi"
+    },
+    {
+      "id": "case-007",
+      "title": "The Poisoned Thermos",
+      "intro": "A logistics manager collapsed during a Monday morning team meeting after drinking from his personal thermos. Toxicology confirmed a slow-acting poison. The thermos had been in his unlocked office over the weekend.",
+      "suspects": [
+        { "name": "Janet Rao",     "description": "Direct report who had filed a formal complaint against the manager two weeks prior" },
+        { "name": "Karl Severin",  "description": "IT technician who serviced equipment in the manager's office on Saturday" },
+        { "name": "Paula Dent",    "description": "Office cleaner who worked the Sunday evening shift" }
+      ],
+      "clues": [
+        "Building access logs show Janet Rao did not badge into the building at any point over the weekend.",
+        "The poison requires refrigeration to remain stable. The thermos was found at room temperature with no refrigeration access in the office.",
+        "Karl Severin's work order shows he was in the manager's office Saturday morning. He has a kitchen with a refrigerator at his on-site maintenance station.",
+        "Paula Dent's cleaning log does not include the manager's office; her assigned section was the third floor, not the second."
+      ],
+      "solution": "Karl Severin",
+      "explanation": "Janet never entered the building that weekend. Paula's assigned area excluded the manager's office. The poison's requirement for refrigeration rules out anyone without cold storage access. Karl was physically in the office Saturday morning and has the only refrigeration source that could keep the compound stable before application.",
+      "hint": "The poison had a cold-chain requirement. Not everyone had access to refrigeration.",
+      "difficulty": "medium",
+      "category": "murder"
+    },
+    {
+      "id": "case-008",
+      "title": "The Vanishing Witness",
+      "intro": "A key witness in a fraud trial disappeared the night before she was scheduled to testify. Her apartment showed no signs of struggle. Three people knew her location under the protection program.",
+      "suspects": [
+        { "name": "Detective Marsh", "description": "Lead investigator on the fraud case, had full access to the protection details" },
+        { "name": "Sara Kline",       "description": "Victim advocate assigned to the witness, only remaining program contact" },
+        { "name": "Victor Holst",     "description": "Defense attorney for the accused, known to have paid for information in a prior case" }
+      ],
+      "clues": [
+        "The protection location was shared internally via an encrypted memo. Access logs show only Detective Marsh and Sara Kline accessed the memo.",
+        "Victor Holst had no documented access to any protection program records.",
+        "Sara Kline's phone records show a 14-minute call to an unregistered prepaid number at 11:20 PM, one hour before the witness was last seen.",
+        "Detective Marsh was running a surveillance operation across town from 9 PM until after midnight, confirmed by four colleagues."
+      ],
+      "solution": "Sara Kline",
+      "explanation": "Victor had no access to the location. Detective Marsh has a confirmed alibi with multiple witnesses. Sara accessed the encrypted memo and made a call to an unregistered number one hour before the witness vanished. No other person with location knowledge is unaccounted for.",
+      "hint": "Only two people could know where the witness was. Check their movements that night.",
+      "difficulty": "easy",
+      "category": "deception"
+    },
+    {
+      "id": "case-009",
+      "title": "The Rooftop Drop",
+      "intro": "A prototype device was stolen from a research firm's rooftop testing area during an evening equipment check. The device requires specialist handling equipment to move. Access to the roof is restricted to three staff members.",
+      "suspects": [
+        { "name": "Dr. Anita Cho",   "description": "Lead researcher who designed the device and knows its handling specifications" },
+        { "name": "Ben Harlow",       "description": "Facilities manager, holds the only spare rooftop key and manages the lift schedule" },
+        { "name": "Yusuf Ademi",     "description": "Junior technician who assisted with the evening check before leaving" }
+      ],
+      "clues": [
+        "The device was moved using the cargo lift, which requires a facilities staff keycard. Yusuf Ademi's keycard does not have lift clearance.",
+        "Dr. Cho left the building at 6:15 PM, confirmed by lobby camera. The theft occurred between 7:00 PM and 8:30 PM.",
+        "Ben Harlow's keycard was used to activate the cargo lift at 7:44 PM. He told investigators he had already gone home by 7:00 PM.",
+        "Yusuf Ademi signed out at 5:50 PM and his exit is confirmed by lobby footage."
+      ],
+      "solution": "Ben Harlow",
+      "explanation": "Yusuf lacked cargo lift clearance and his exit is confirmed before the theft window. Dr. Cho left at 6:15 PM, confirmed on camera. The cargo lift was activated at 7:44 PM using Ben Harlow's keycard, during a period he falsely claimed to have been at home.",
+      "hint": "The cargo lift can only be operated with a specific keycard. Check who used it.",
+      "difficulty": "easy",
+      "category": "theft"
+    },
+    {
+      "id": "case-010",
+      "title": "The Retirement Party",
+      "intro": "A retired police chief collapsed and died at his own retirement party. Toxicology found a lethal dose of a cardiac medication in his drink. He had not been prescribed any such medication. The drink was handed to him by one of three guests.",
+      "suspects": [
+        { "name": "Frank Lido",    "description": "Former colleague the chief had testified against in a misconduct hearing years ago" },
+        { "name": "Agnes Torr",    "description": "The chief's estranged sister, who stood to inherit under a life insurance policy" },
+        { "name": "Roy Pemberton", "description": "Current department captain, recently passed over for a promotion the chief had influenced" }
+      ],
+      "clues": [
+        "The medication found in the drink is a prescription compound. A pharmacy record shows it was filled under Agnes Torr's name two weeks before the party.",
+        "Frank Lido arrived at the party at 8:45 PM. The chief's drink was handed to him at 8:15 PM, confirmed by event photographs.",
+        "Roy Pemberton handed the chief his drink in a photograph timestamped 8:14 PM, but he told investigators he arrived at 8:30 PM.",
+        "Agnes Torr was photographed talking to other guests from 8:00 PM to 9:00 PM with no visible break."
+      ],
+      "solution": "Roy Pemberton",
+      "explanation": "Agnes has photographic coverage of the relevant period. Frank was not present when the drink was handed over. Roy is photographed handing the chief the drink at 8:14 PM but claimed not to have arrived until 8:30 PM. The prescripted medication traces to Agnes, but she had no opportunity, while Roy's false alibi and photographic evidence place him directly at the point of poisoning.",
+      "hint": "Someone lied about when they arrived. The timestamp on a photograph shows otherwise.",
+      "difficulty": "hard",
+      "category": "murder"
+    },
+    {
+      "id": "case-011",
+      "title": "The Broken Window",
+      "intro": "A rare stamp collection was stolen from a private residence while the owner was traveling. Entry appeared to be through a broken rear window, but the glass fell outward, not inward.",
+      "suspects": [
+        { "name": "Nick Carver",  "description": "The owner's nephew, who had visited the house the week before and knew the layout" },
+        { "name": "Donna Hass",   "description": "House cleaner who had a spare key and access to the interior" },
+        { "name": "Tom Eccles",   "description": "Neighbor who reported the break-in to police" }
+      ],
+      "clues": [
+        "Glass from the broken window fell onto the exterior patio, not into the room. This means the window was broken from inside, not outside.",
+        "Donna Hass's spare key was found in her bag. No key was used to enter; the door deadbolt was not engaged.",
+        "Tom Eccles reported the break-in the morning after it occurred and told police the back light was on when he saw it at 11 PM the night before.",
+        "Nick Carver's cell phone pinged a tower six blocks from the house at 10:47 PM on the night of the theft."
+      ],
+      "solution": "Nick Carver",
+      "explanation": "The glass falling outward proves the window was broken from inside, meaning the thief was already in the house and staged a false entry point. Donna had a key but the deadbolt was not used, suggesting the person inside did not need a key. Nick's phone places him six blocks away at 10:47 PM, consistent with the timeframe, and his prior visit gave him knowledge of the interior and where to find the collection.",
+      "hint": "The direction the glass fell tells you something important about how entry actually happened.",
+      "difficulty": "hard",
+      "category": "theft"
+    },
+    {
+      "id": "case-012",
+      "title": "The Undated Letter",
+      "intro": "A prominent author was found dead in his study. An undated handwritten letter on his desk appeared to be a confession to financial fraud. Investigators questioned whether the letter was written by the author or planted after his death.",
+      "suspects": [
+        { "name": "Miriam Cole",   "description": "The author's editor, who had power of attorney and stood to benefit from the estate" },
+        { "name": "James Whittle", "description": "The author's accountant, who the letter accused directly of orchestrating the fraud" },
+        { "name": "Rosa Fenn",     "description": "The author's domestic staff member who discovered the body" }
+      ],
+      "clues": [
+        "A handwriting expert confirmed the letter was written by the author, but the ink type differs from any pen found in the study.",
+        "James Whittle was in another country at the time of death, confirmed by immigration records.",
+        "The author was left-handed. The letter shows right-handed pen pressure, inconsistent with his other known correspondence.",
+        "Miriam Cole had access to both the study and a collection of the author's documents she used for a biography project."
+      ],
+      "solution": "Miriam Cole",
+      "explanation": "James was out of the country. Rosa discovered the body but had no apparent motive and no access to the author's documents. The pen pressure inconsistency suggests the letter was traced or copied, not genuinely written. Miriam had access to the author's handwriting samples through the biography project and had the access needed to plant the letter before Rosa arrived.",
+      "hint": "The pen pressure does not match the author's dominant hand. Someone copied his handwriting.",
+      "difficulty": "hard",
+      "category": "deception"
+    },
+    {
+      "id": "case-013",
+      "title": "The Empty Locker",
+      "intro": "A professional cyclist's performance data drive was stolen from his locker at a training facility one day before a major doping review. The drive contained months of training records. Three people had locker room access during the relevant window.",
+      "suspects": [
+        { "name": "Coach Renata",   "description": "Head coach with a master locker key and a vested interest in the review outcome" },
+        { "name": "Davide Costa",   "description": "Rival cyclist who had accused the victim of doping the previous season" },
+        { "name": "Lena Schreiber", "description": "Facility administrator, processed locker assignments and held a master key" }
+      ],
+      "clues": [
+        "The locker was opened without force. Only two master keys exist: one held by Coach Renata, one by Lena Schreiber.",
+        "Facility entry logs show Davide Costa was not in the building at any point on the day of the theft.",
+        "Coach Renata's master key was signed out at 3:10 PM and returned at 3:55 PM. The theft window is between 3:00 PM and 4:00 PM.",
+        "Lena Schreiber's key was secured in the admin safe during the same window, confirmed by the safe's access log."
+      ],
+      "solution": "Coach Renata",
+      "explanation": "Davide was not in the building. Lena's key was in the safe during the theft window. Coach Renata signed out the only available master key during the exact period the theft occurred and returned it 45 minutes later with no documented reason for using it.",
+      "hint": "Only one master key was outside secured storage during the theft window.",
+      "difficulty": "easy",
+      "category": "theft"
+    },
+    {
+      "id": "case-014",
+      "title": "The Flooded Basement",
+      "intro": "A bookkeeper for a small construction firm disappeared along with five years of payroll records. When police searched the company's basement archive, they found the filing cabinets flooded, destroying most of the physical records. Three employees had after-hours access.",
+      "suspects": [
+        { "name": "Gary Oakes",    "description": "Site supervisor whose name appears irregularly in altered payroll entries" },
+        { "name": "Vera Huston",   "description": "Bookkeeper's assistant who had been denied a pay increase three months prior" },
+        { "name": "Nate Corrigan", "description": "Facilities technician responsible for the building's water and utilities systems" }
+      ],
+      "clues": [
+        "The flooding was caused by a water main valve being manually opened. The valve is in a locked utility room; only Nate Corrigan holds the key.",
+        "Vera Huston's after-hours badge access was used to enter the building at 11:40 PM on the night the flood began.",
+        "Gary Oakes's name appears in 14 irregularly altered payroll entries. If the records are destroyed, the alterations cannot be verified.",
+        "Nate Corrigan was on medical leave and had submitted his key to reception the previous week per company leave policy."
+      ],
+      "solution": "Vera Huston",
+      "explanation": "Nate had submitted his key before the incident, removing his access. Gary had motive but no documented access to the utility room or building after hours. Vera's badge shows her entering the building at 11:40 PM, the night the flooding started. The valve could be reached by anyone inside the building without the key once the utility room was otherwise accessible.",
+      "hint": "Check who was confirmed inside the building the night the flooding started.",
+      "difficulty": "medium",
+      "category": "deception"
+    },
+    {
+      "id": "case-015",
+      "title": "The Transfer Order",
+      "intro": "A mid-sized investment firm discovered that 300,000 had been moved to an offshore account via an internal transfer order. The order was processed under the credentials of the firm's senior compliance officer, who denies authorizing it.",
+      "suspects": [
+        { "name": "Helen Marsh",   "description": "Senior compliance officer whose credentials were used for the transfer" },
+        { "name": "Declan Forde",  "description": "IT administrator with access to the authentication system and credential records" },
+        { "name": "Priya Oommen", "description": "Junior analyst who shared an office with the compliance officer" }
+      ],
+      "clues": [
+        "The transfer was initiated from an internal workstation at 6:42 AM, before normal business hours. Card access logs show only Declan Forde entered the building before 7:00 AM that day.",
+        "Helen Marsh's login session that morning began at 8:55 AM, confirmed by the authentication server.",
+        "Priya Oommen does not have system privileges to initiate transfers above 10,000.",
+        "Declan Forde has read-write access to stored authentication tokens and had resolved a ticket involving Helen Marsh's credentials the previous week."
+      ],
+      "solution": "Declan Forde",
+      "explanation": "Priya lacked the system privilege level to initiate the transfer. Helen's authenticated session began more than two hours after the transfer was processed. Declan was the only person in the building at 6:42 AM, had prior access to Helen's credential tokens, and possessed the technical ability to use a stored token without her knowledge.",
+      "hint": "The transfer happened before most people were in the building. Check who was there.",
+      "difficulty": "medium",
+      "category": "theft"
+    },
+    {
+      "id": "case-016",
+      "title": "The Staged Accident",
+      "intro": "A wealthy collector died when the elevator in his private estate failed, dropping him two floors. An engineer's inspection found that the elevator's safety brake had been manually disengaged. Three people were in the estate on the day of the accident.",
+      "suspects": [
+        { "name": "Anton Weiss",   "description": "The collector's business partner, owed a disputed sum from a recent deal" },
+        { "name": "Cora Webb",     "description": "Estate housekeeper with twelve years of service and full knowledge of the building" },
+        { "name": "Felix Drummond","description": "Elevator maintenance technician who had serviced the system two days prior" }
+      ],
+      "clues": [
+        "The safety brake requires a specific hex key to disengage. Only Felix Drummond's company supplies that tool as part of their maintenance kit.",
+        "Felix Drummond's service report from two days prior confirms the brake was functioning correctly at the time of his visit.",
+        "Cora Webb was photographed at a family event 40 kilometers away on the day of the incident, timestamps confirmed.",
+        "Anton Weiss was in the estate that morning and later stated he had never been near the elevator room. Staff saw him on that floor at 10:15 AM."
+      ],
+      "solution": "Anton Weiss",
+      "explanation": "Cora's alibi is confirmed by timestamped photographs. Felix confirmed the brake was working at his service visit, meaning it was tampered with afterward. The hex key Felix's company uses could have been taken from his kit. Anton was seen on the floor containing the elevator room despite claiming otherwise, and had financial motivation to cause the death.",
+      "hint": "The brake was fine two days ago. Someone tampered with it after the last service visit.",
+      "difficulty": "hard",
+      "category": "murder"
+    },
+    {
+      "id": "case-017",
+      "title": "The Archive Key",
+      "intro": "Classified blueprints from a defense contractor went missing from a locked archive room. An internal investigation traced the leak to a photo taken on a mobile device inside the room. Three employees had authorized archive access.",
+      "suspects": [
+        { "name": "Richard Lam",   "description": "Senior engineer with archive access and a personal financial dispute with the firm" },
+        { "name": "Toni Baxter",   "description": "Document control officer responsible for the archive, recently headhunted by a competitor" },
+        { "name": "Omar Nassif",   "description": "Junior engineer who applied for archive access three months ago and was denied" }
+      ],
+      "clues": [
+        "Omar Nassif's access application was denied. He does not have an archive keycard.",
+        "The metadata on the leaked photograph shows it was taken at 7:52 AM on a Tuesday. Toni Baxter's timesheet shows she started work at 9:00 AM on that day.",
+        "Richard Lam's keycard was used to access the archive at 7:49 AM on the same Tuesday.",
+        "The phone model in the metadata matches the make of phone issued to Richard Lam by the company."
+      ],
+      "solution": "Richard Lam",
+      "explanation": "Omar had no keycard. Toni did not arrive until 9:00 AM, over an hour after the photo was taken. Richard's keycard accessed the archive three minutes before the photograph was taken, and the phone metadata matches his company-issued device.",
+      "hint": "The photo timestamp and archive entry log point to the same three-minute window.",
+      "difficulty": "easy",
+      "category": "deception"
+    },
+    {
+      "id": "case-018",
+      "title": "The Night Porter",
+      "intro": "A hotel guest was found dead in his room during the early morning hours. He had been struck with a blunt object that was not recovered. The hotel's corridor camera was offline between 2:00 AM and 3:20 AM. Three staff members were on duty.",
+      "suspects": [
+        { "name": "Alec Dorn",    "description": "Night porter responsible for corridor security and guest requests on that floor" },
+        { "name": "Greta Woll",   "description": "Front desk clerk, stationed at reception the entire shift per standard procedure" },
+        { "name": "Jerome Falk",  "description": "Maintenance worker called in for an emergency boiler issue in the basement" }
+      ],
+      "clues": [
+        "The guest's room key card log shows the door opened at 2:24 AM using a master passcard. Only night porters carry master passcards during shifts.",
+        "Greta Woll's login activity on the front desk terminal is continuous from midnight to 4:00 AM with no extended gaps.",
+        "Jerome Falk's maintenance log and the boiler system's digital record confirm he was working in the basement between 1:55 AM and 3:40 AM.",
+        "Alec Dorn told investigators he was on his routine floor check between 2:00 AM and 3:00 AM and had no other calls logged."
+      ],
+      "solution": "Alec Dorn",
+      "explanation": "Greta's terminal activity shows continuous presence at the desk. Jerome's work is confirmed by the boiler system's own digital log. The room was opened with a master passcard during the period the corridor camera was offline. Alec was the only night porter on that floor, carried the relevant passcard, and has no corroborated account of his movements during the exact window.",
+      "hint": "The room opened with a master passcard that only one category of staff carries.",
+      "difficulty": "medium",
+      "category": "murder"
+    },
+    {
+      "id": "case-019",
+      "title": "The Proxy Vote",
+      "intro": "A shareholder vote at a private company was manipulated when proxy forms for three absent shareholders were submitted fraudulently. The forms changed the outcome of a major acquisition vote. Access to the shareholders' personal files was required to forge the forms.",
+      "suspects": [
+        { "name": "Irene Toft",   "description": "Company secretary with administrative access to all shareholder records" },
+        { "name": "Malcolm Birch","description": "Acquisition deal advisor hired externally for this transaction" },
+        { "name": "Stuart Pace",  "description": "Majority shareholder who would benefit if the acquisition passed" }
+      ],
+      "clues": [
+        "The proxy forms required personal details from each shareholder's file. Malcolm Birch was not granted access to shareholder records under his advisory contract.",
+        "Stuart Pace voted in person and would have needed the acquisition to pass, but his own proxy was not affected.",
+        "The shareholder record system's access log shows a query pulling all three affected shareholders' contact and signature data at 4:15 PM, three days before the vote.",
+        "The 4:15 PM query was made using Irene Toft's administrator credentials."
+      ],
+      "solution": "Irene Toft",
+      "explanation": "Malcolm lacked system access. Stuart voted in person and had no reason to forge others' proxies since his own vote was already counted. The signature data needed to forge the forms was pulled from the system using Irene's credentials at a specific time three days before the vote, tying her directly to the preparation of the forgery.",
+      "hint": "Whoever forged the forms needed the shareholders' signature data first.",
+      "difficulty": "medium",
+      "category": "deception"
+    },
+    {
+      "id": "case-020",
+      "title": "The Open Window",
+      "intro": "A senior scientist at a pharmaceutical research facility was found unconscious in her office with traces of sedative in her coffee. Her personal research notes, which represented three years of unpublished work, were gone.",
+      "suspects": [
+        { "name": "Dr. Paulo Reis", "description": "Research rival within the same facility who had filed two patent disputes against the victim" },
+        { "name": "Carmen Vidal",   "description": "Lab technician who prepared the coffee cart each morning and distributed drinks to offices" },
+        { "name": "Sven Lund",      "description": "Visiting researcher from a partner institution who had toured the facility that day" }
+      ],
+      "clues": [
+        "The sedative found in the coffee is stored in a locked refrigerator in the main lab. Only Carmen Vidal and the lab manager have keys to that refrigerator.",
+        "Sven Lund's visitor pass restricts him to the conference wing. He did not have building access to any lab or office corridor.",
+        "Dr. Paulo Reis's key card shows he entered the facility at 11:30 AM. The sedative was introduced before 9:00 AM, when the victim drank her first coffee.",
+        "Carmen Vidal prepared and distributed the coffee cart between 8:15 AM and 8:50 AM, with exclusive access to the coffee before distribution."
+      ],
+      "solution": "Carmen Vidal",
+      "explanation": "Sven could not access the relevant areas. Dr. Reis did not arrive until hours after the sedative was introduced. Only Carmen and the lab manager could access the sedative supply, and Carmen was the one with direct contact with the coffee before it reached the victim.",
+      "hint": "Two people had access to the sedative. Only one had contact with the coffee before it was delivered.",
+      "difficulty": "medium",
+      "category": "theft"
     }
   ],
   "schedule": {
     "2026-07-23": "case-001",
     "2026-07-24": "case-002",
-    "2026-07-25": "case-003"
+    "2026-07-25": "case-003",
+    "2026-07-26": "case-004",
+    "2026-07-27": "case-005",
+    "2026-07-28": "case-006",
+    "2026-07-29": "case-007",
+    "2026-07-30": "case-008",
+    "2026-07-31": "case-009",
+    "2026-08-01": "case-010",
+    "2026-08-02": "case-011",
+    "2026-08-03": "case-012",
+    "2026-08-04": "case-013",
+    "2026-08-05": "case-014",
+    "2026-08-06": "case-015",
+    "2026-08-07": "case-016",
+    "2026-08-08": "case-017",
+    "2026-08-09": "case-018",
+    "2026-08-10": "case-019",
+    "2026-08-11": "case-020"
   }
 }
