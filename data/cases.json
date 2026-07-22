@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {
+      "id": "case-001",
+      "title": "The Missing Ledger",
+      "intro": "A senior accountant at Hartley and Sons was found dead at his desk on a Monday morning. The company financial ledger had vanished from his locked office. Three people had after-hours access to the building that night.",
+      "suspects": [
+        {
+          "name": "Diana Marsh",
+          "description": "Junior accountant, passed over for promotion twice this year"
+        },
+        {
+          "name": "Gerald Thorn",
+          "description": "Night security guard with a documented gambling problem"
+        },
+        {
+          "name": "Claire Sutton",
+          "description": "Senior partner's personal assistant, held a duplicate office key"
+        }
+      ],
+      "clues": [
+        "The office door was locked from the inside when found. The window latch was unlatched.",
+        "Security logs show Gerald Thorn clocking out at 11:47 PM, two hours before the estimated time of death.",
+        "Claire Sutton's keycard records show access to the server room at 1:15 AM, though she claims to have been home all night.",
+        "Diana Marsh has no keycard activity recorded after 10:00 PM."
+      ],
+      "solution": "Claire Sutton",
+      "explanation": "Gerald's alibi is confirmed by the security log. Diana had no after-hours keycard activity. Claire's keycard placed her inside the building during the estimated time of death, directly contradicting her alibi. The unlatched window explains how she exited a room locked from the inside.",
+      "hint": "Check who was provably inside the building after midnight.",
+      "difficulty": "easy",
+      "category": "deception"
+    },
+    {
+      "id": "case-002",
+      "title": "The Broken Safe",
+      "intro": "A jewelry store owner was found unconscious beside his cracked safe at closing time. Around 40,000 in stones were gone. The store had been locked all day with no signs of forced entry from outside.",
+      "suspects": [
+        {
+          "name": "Ray Kowalski",
+          "description": "Store manager, knew the combination and had a key to the back door"
+        },
+        {
+          "name": "Tara Bloom",
+          "description": "Part-time cashier, recently asked for a pay advance and was refused"
+        },
+        {
+          "name": "Sol Navarro",
+          "description": "Delivery contractor who made a scheduled afternoon drop that day"
+        }
+      ],
+      "clues": [
+        "The back door was unlocked from the inside. The front deadbolt was engaged.",
+        "Sol Navarro signed out at 3:40 PM. The dock camera confirms he left the building at that time.",
+        "Tara Bloom called in sick that morning and did not enter the store at any point during the day.",
+        "The safe shows no tool marks or sign of drilling. It was opened by someone who knew the combination."
+      ],
+      "solution": "Ray Kowalski",
+      "explanation": "Sol was confirmed off-site hours before the theft window. Tara never entered the building. The absence of tool marks means the safe was opened with the combination, not forced. Ray was the only person present who knew the code, and his claim that he locked the safe before leaving cannot be reconciled with the missing stones.",
+      "hint": "A safe with no tool marks was opened by someone who already knew the code.",
+      "difficulty": "easy",
+      "category": "theft"
+    },
+    {
+      "id": "case-003",
+      "title": "The Last Train",
+      "intro": "A businessman was found dead in a first-class compartment on the 11:40 PM overnight train from Caldwell. The train made no stops between departure and the point of discovery. Three other passengers occupied nearby seats.",
+      "suspects": [
+        {
+          "name": "Nora Vance",
+          "description": "Retired nurse traveling to visit family, seated directly across the aisle"
+        },
+        {
+          "name": "Phillip Osei",
+          "description": "Sales representative, seated directly behind the victim, a frequent rider on this route"
+        },
+        {
+          "name": "Marta Frei",
+          "description": "Academic returning from a conference, seated two rows ahead facing the rear"
+        }
+      ],
+      "clues": [
+        "The victim was poisoned. A fast-acting compound was introduced to his drink.",
+        "The conductor observed Nora Vance sleeping in her seat from 11:55 PM until the body was discovered.",
+        "Marta Frei's rear-facing seat made reaching the victim's drink impossible without passing Nora Vance, who was awake at the relevant time.",
+        "Phillip Osei ordered two drinks from the trolley service. The victim's receipt shows only one drink ordered."
+      ],
+      "solution": "Phillip Osei",
+      "explanation": "Nora's alibi is confirmed by the conductor. Marta's seat position made access physically implausible. Phillip ordered two drinks when the victim ordered one, and was standing in the aisle with access to the victim's drink. The extra drink on his order points to the method of introduction.",
+      "hint": "Someone was standing near the victim's drink with an unexplained extra order.",
+      "difficulty": "medium",
+      "category": "alibi"
+    }
+  ],
+  "schedule": {
+    "2026-07-23": "case-001",
+    "2026-07-24": "case-002",
+    "2026-07-25": "case-003"
+  }
+}

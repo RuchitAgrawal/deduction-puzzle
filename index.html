@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A daily deduction puzzle. Three suspects, four clues, two minutes. Find the culprit before time runs out.">
+  <title>Deduction Puzzle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- Loading -->
+    <div id="screen-loading" class="screen active" aria-live="polite">
+      <div class="loading-inner">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <p class="loading-text">Loading case file...</p>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <div id="screen-error" class="screen" role="alert">
+      <div class="error-inner">
+        <p class="error-icon" aria-hidden="true">!</p>
+        <h1 class="error-title">Failed to load case</h1>
+        <p class="error-msg">Check your connection and reload the page.</p>
+        <button onclick="window.location.reload()" class="btn-primary">Reload</button>
+      </div>
+    </div>
+
+    <!-- Game -->
+    <div id="screen-game" class="screen" role="main">
+      <header class="game-header">
+        <div class="header-left">
+          <span class="logo">Deduction</span>
+          <span id="case-id-badge" class="case-badge">CASE-001</span>
+        </div>
+        <div id="timer" class="timer timer-green" role="timer" aria-label="Time remaining">3:00</div>
+      </header>
+
+      <div class="game-content">
+        <section class="case-intro-section">
+          <h1 id="case-title" class="case-title">Loading...</h1>
+          <p id="case-intro" class="case-intro-text"></p>
+        </section>
+
+        <section class="suspects-section" aria-labelledby="suspects-heading">
+          <h2 id="suspects-heading" class="section-label">Suspects</h2>
+          <div id="suspects-grid" class="suspects-grid" role="group" aria-label="Select a suspect"></div>
+        </section>
+
+        <section class="clues-section" aria-labelledby="clues-heading">
+          <h2 id="clues-heading" class="section-label">Evidence</h2>
+          <ol id="clues-list" class="clues-list"></ol>
+        </section>
+
+        <div id="hint-area" class="hint-area hidden">
+          <button id="hint-btn" class="hint-btn" type="button">
+            Reveal a hint
+            <span class="hint-cost">costs 30 seconds</span>
+          </button>
+          <p id="hint-text" class="hint-text hidden" role="status"></p>
+        </div>
+      </div>
+
+      <div class="game-footer">
+        <p id="selected-label" class="selected-label" aria-live="polite">Select a suspect above</p>
+        <button id="accuse-btn" class="accuse-btn" type="button" disabled>Make Accusation</button>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div id="screen-result" class="screen">
+      <div class="result-inner">
+        <div id="result-header" class="result-header">
+          <div id="result-icon" class="result-icon" aria-hidden="true"></div>
+          <h1 id="result-verdict" class="result-verdict"></h1>
+          <p id="result-time" class="result-time"></p>
+        </div>
+
+        <div id="streak-banner" class="streak-banner hidden" aria-live="polite"></div>
+
+        <div class="result-solution-block">
+          <p class="solution-label">The culprit was</p>
+          <p id="result-solution" class="solution-name"></p>
+        </div>
+
+        <div class="result-explanation-block">
+          <h2 class="section-label">How the evidence points there</h2>
+          <p id="result-explanation" class="result-explanation-text"></p>
+        </div>
+
+        <div class="bridge-cta" role="complementary">
+          <p id="bridge-text" class="bridge-text"></p>
+          <a
+            id="tlq-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tlq-btn"
+            aria-label="Try The Last Question"
+          >Investigate Deeper</a>
+        </div>
+
+        <div class="result-actions">
+          <button id="share-btn" class="btn-secondary" type="button">Share result</button>
+          <a id="next-case-link" href="/" class="btn-outline">Next case</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation modal -->
+    <div id="confirm-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-box">
+        <h2 id="modal-title" class="modal-title">Confirm accusation</h2>
+        <p class="modal-body">You are accusing <strong id="confirm-name"></strong>.</p>
+        <p class="modal-warning">This cannot be undone.</p>
+        <div class="modal-actions">
+          <button id="cancel-btn" class="btn-outline" type="button">Cancel</button>
+          <button id="confirm-btn" class="btn-danger" type="button">Accuse</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/analytics.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
