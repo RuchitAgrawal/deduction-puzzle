@@ -229,28 +229,53 @@ function toggleEliminated(card) {
 function renderClues(clues) {
   var list = document.getElementById('clues-list');
   list.innerHTML = '';
-  clues.forEach(function (clue) {
+  var suspects = (state.currentCase && state.currentCase.suspects) || [];
+
+  clues.forEach(function (clue, idx) {
     var li = document.createElement('li');
     li.className = 'clue-item interactive-clue';
-    li.setAttribute('role', 'button');
-    li.setAttribute('tabindex', '0');
-    li.setAttribute('title', 'Click to mark evidence as verified');
+    li.setAttribute('role', 'region');
+    li.setAttribute('aria-label', 'Evidence piece ' + (idx + 1));
+
+    var optionsHtml = '<option value="">📌 Link Evidence...</option>' +
+                      '<option value="motive">⚡ Motive Confirmed</option>' +
+                      '<option value="alibi">🛡️ Alibi Verified</option>' +
+                      '<option value="lie">🚨 Contradiction Found</option>';
+
+    suspects.forEach(function (s) {
+      optionsHtml += '<option value="' + escapeHtml(s.name) + '">👤 Implicates ' + escapeHtml(s.name) + '</option>';
+    });
 
     li.innerHTML =
-      '<span class="clue-text">' + escapeHtml(clue) + '</span>' +
-      '<span class="clue-status-badge" aria-hidden="true">✓ Verified</span>';
+      '<div class="clue-main-content">' +
+        '<span class="clue-text">' + escapeHtml(clue) + '</span>' +
+      '</div>' +
+      '<div class="clue-actions-row">' +
+        '<select class="clue-tag-select" aria-label="Tag evidence with analysis">' + optionsHtml + '</select>' +
+        '<button class="clue-verify-btn" type="button" title="Mark as verified">✓ Verify</button>' +
+      '</div>';
 
-    li.addEventListener('click', function () {
-      li.classList.toggle('highlighted-clue');
+    var selectEl = li.querySelector('.clue-tag-select');
+    selectEl.addEventListener('change', function (e) {
+      e.stopPropagation();
+      li.classList.remove('tag-motive', 'tag-alibi', 'tag-lie', 'tag-suspect');
+      var val = selectEl.value;
+      if (val === 'motive') li.classList.add('tag-motive');
+      else if (val === 'alibi') li.classList.add('tag-alibi');
+      else if (val === 'lie') li.classList.add('tag-lie');
+      else if (val !== '') li.classList.add('tag-suspect');
+
       if (typeof playClickSound === 'function') playClickSound();
     });
 
-    li.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        li.classList.toggle('highlighted-clue');
-        if (typeof playClickSound === 'function') playClickSound();
-      }
+    var verifyBtn = li.querySelector('.clue-verify-btn');
+    verifyBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      li.classList.toggle('highlighted-clue');
+      var verified = li.classList.contains('highlighted-clue');
+      verifyBtn.textContent = verified ? '✓ Verified' : '✓ Verify';
+      verifyBtn.classList.toggle('active', verified);
+      if (typeof playClickSound === 'function') playClickSound();
     });
 
     list.appendChild(li);
