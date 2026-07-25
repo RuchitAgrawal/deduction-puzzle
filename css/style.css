@@ -1260,6 +1260,98 @@ body::before {
   background: var(--red-hover);
 }
 
+/* Intercepted Transcript Modal */
+.transcript-box {
+  max-width: 480px;
+  background: var(--bg-surface);
+  border: 1px solid var(--amber-border);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
+  text-align: left;
+}
+
+.transcript-header {
+  margin-bottom: var(--sp-4);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.transcript-live-dot {
+  color: #ef4444;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  animation: pulse 1.5s infinite;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.transcript-title {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.transcript-chat-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  background: var(--bg-root);
+  padding: var(--sp-4);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border-default);
+}
+
+.chat-bubble {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding: var(--sp-3);
+  border-radius: var(--r-md);
+  font-family: var(--font-mono);
+}
+
+.chat-sys {
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.chat-suspect {
+  background: var(--amber-bg);
+  color: var(--amber-light);
+  border: 1px solid var(--amber-border);
+}
+
+.transcript-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.transcript-prompt {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 0;
+}
+
+.transcript-btn {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pulse-glow-btn {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+  animation: glow-pulse 2s infinite ease-in-out;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+  50% { box-shadow: 0 0 22px rgba(245, 158, 11, 0.7); }
+}
+
 /* ============================================================
    Utilities
    ============================================================ */

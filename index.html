@@ -185,6 +185,30 @@
       </div>
     </div>
 
+    <!-- Intercepted Transcript Conversion Teaser Modal -->
+    <div id="transcript-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="transcript-modal-title">
+      <div class="modal-backdrop" id="transcript-backdrop"></div>
+      <div class="modal-box transcript-box">
+        <div class="transcript-header">
+          <span class="transcript-live-dot">● LIVE INTERCEPTION</span>
+          <h2 id="transcript-modal-title" class="transcript-title">Interrogation Room Alpha</h2>
+        </div>
+        <div class="transcript-chat-area">
+          <div class="chat-bubble chat-sys">
+            <strong>[SYSTEM]:</strong> Suspect connected to live interrogation feed.
+          </div>
+          <div class="chat-bubble chat-suspect" id="transcript-dialogue">
+            <strong>[SUSPECT]:</strong> You have no proof! Everything you think you know is a setup by the handler network. Try to interrogate me yourself!
+          </div>
+        </div>
+        <div class="transcript-footer">
+          <p class="transcript-prompt">Your suspect awaits cross-examination on The Last Question.</p>
+          <a id="transcript-continue-btn" href="https://thelastquestion.io/?utm_source=puzzle&utm_medium=sidegame&utm_campaign=deduction" class="btn-primary pulse-glow-btn transcript-btn">Enter Interrogation Room -&gt; Continue on TLQ</a>
+          <button id="transcript-cancel-btn" class="btn-outline" type="button">Close Preview</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="js/analytics.js"></script>
