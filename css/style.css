@@ -245,6 +245,27 @@ body::before {
   transform: translateY(-1px);
 }
 
+.header-audio-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+
+.header-audio-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--amber-border);
+  transform: translateY(-1px);
+}
+
 .logo {
   font-size: 0.8rem;
   font-weight: 600;
