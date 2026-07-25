@@ -40,7 +40,10 @@
           <span id="arc-badge" class="arc-badge hidden"></span>
           <span class="academy-drill-badge">Preliminary Academy Drill</span>
         </div>
-        <div id="timer" class="timer timer-green" role="timer" aria-label="Time remaining">3:00</div>
+        <div class="header-right">
+          <button id="header-rank-badge" class="header-rank-badge" type="button" title="View Detective Profile"><span>🔍 Cadet</span></button>
+          <div id="timer" class="timer timer-green" role="timer" aria-label="Time remaining">3:00</div>
+        </div>
       </header>
 
       <div class="game-content">
@@ -139,9 +142,52 @@
       </div>
     </div>
 
+    <!-- Detective Profile Scorecard Modal -->
+    <div id="profile-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title">
+      <div class="modal-backdrop" id="profile-backdrop"></div>
+      <div class="modal-box profile-box">
+        <div class="profile-header">
+          <div class="profile-rank-icon" id="profile-rank-icon">🔍</div>
+          <h2 id="profile-modal-title" class="profile-title">Detective Profile</h2>
+          <div class="profile-rank-title" id="profile-rank-title">Cadet</div>
+        </div>
+        
+        <div class="profile-progress-container">
+          <div class="profile-progress-label" id="profile-progress-text">0 / 1 Solved for Next Rank</div>
+          <div class="profile-progress-track">
+            <div class="profile-progress-bar" id="profile-progress-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-num" id="stat-played">0</span>
+            <span class="stat-label">Total Played</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" id="stat-solved">0</span>
+            <span class="stat-label">Cases Solved</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" id="stat-clean">0</span>
+            <span class="stat-label">Clean Solves</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" id="stat-fastest">N/A</span>
+            <span class="stat-label">Fastest Time</span>
+          </div>
+        </div>
+
+        <div class="modal-actions profile-actions">
+          <button id="profile-close-btn" class="btn-primary" type="button">Close Profile</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="js/analytics.js"></script>
+  <script src="js/rank.js"></script>
   <script src="js/share.js"></script>
   <script src="js/game.js"></script>
 </body>

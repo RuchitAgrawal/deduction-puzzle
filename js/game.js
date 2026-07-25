@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
   state.sessionId   = getOrCreateSessionId();
   state.practiceMode = new URLSearchParams(window.location.search).get('practice') === '1';
 
+  if (typeof updateHeaderRankBadge === 'function') updateHeaderRankBadge();
+  if (typeof setupRankModal === 'function') setupRankModal();
+
   loadCase().then(function (caseData) {
     if (!caseData) {
       showScreen('screen-error');
@@ -355,6 +358,14 @@ function submitAccusation() {
 
 function showResultScreen(correct, timeRemaining, timedOut) {
   updateStreak(correct);
+  if (typeof recordGameResult === 'function') {
+    recordGameResult({
+      correct: correct,
+      timeTaken: TIMER_SECONDS - timeRemaining,
+      hintUsed: state.hintUsed,
+      hardcore: state.hardcoreMode || false
+    });
+  }
 
   var header  = document.getElementById('result-header');
   var icon    = document.getElementById('result-icon');
