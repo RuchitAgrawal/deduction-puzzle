@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (typeof updateHeaderRankBadge === 'function') updateHeaderRankBadge();
   if (typeof setupRankModal === 'function') setupRankModal();
+  if (typeof setupAudioToggle === 'function') setupAudioToggle();
 
   loadCase().then(function (caseData) {
     if (!caseData) {
@@ -206,6 +207,11 @@ function renderSuspects(suspects) {
 
 function toggleEliminated(card) {
   var isEliminated = card.classList.toggle('eliminated');
+  if (isEliminated) {
+    if (typeof playEliminateSound === 'function') playEliminateSound();
+  } else {
+    if (typeof playRestoreSound === 'function') playRestoreSound();
+  }
   var btn = card.querySelector('.eliminate-btn');
   if (btn) {
     btn.textContent = isEliminated ? '↺ Restore' : '✕ Eliminate';
@@ -236,12 +242,14 @@ function renderClues(clues) {
 
     li.addEventListener('click', function () {
       li.classList.toggle('highlighted-clue');
+      if (typeof playClickSound === 'function') playClickSound();
     });
 
     li.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         li.classList.toggle('highlighted-clue');
+        if (typeof playClickSound === 'function') playClickSound();
       }
     });
 
@@ -296,6 +304,9 @@ function updateTimerDisplay(seconds) {
     el.classList.add('timer-yellow');
   } else {
     el.classList.add('timer-red', 'timer-pulse');
+    if (seconds <= 15 && seconds > 0) {
+      if (typeof playTickSound === 'function') playTickSound();
+    }
   }
 }
 
@@ -375,14 +386,17 @@ function showResultScreen(correct, timeRemaining, timedOut) {
   header.className = 'result-header ' + (correct ? 'correct' : 'wrong');
 
   if (timedOut) {
+    if (typeof playFailSound === 'function') playFailSound();
     icon.textContent    = 'X';
     verdict.textContent = 'Out of time';
     timeEl.textContent  = 'The clock ran out before you made a call.';
   } else if (correct) {
+    if (typeof playSolveSound === 'function') playSolveSound();
     icon.textContent    = 'V';
     verdict.textContent = 'Case closed';
     timeEl.textContent  = timeRemaining + 's remaining on the clock';
   } else {
+    if (typeof playFailSound === 'function') playFailSound();
     icon.textContent    = 'X';
     verdict.textContent = 'Wrong suspect';
     timeEl.textContent  = timeRemaining + 's were left when you made your call';
