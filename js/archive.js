@@ -60,6 +60,8 @@ function buildCard(c) {
   link.dataset.category   = c.category || '';
   link.setAttribute('aria-label', c.title + ', ' + c.difficulty + ' difficulty, ' + c.category);
 
+  var arcTag = c.arc ? ('<span class="tag tag-arc">' + escapeHtml(c.arc) + '</span>') : '';
+
   link.innerHTML =
     '<div class="case-card-left">' +
       '<span class="case-card-id">' + escapeHtml(c.id.toUpperCase()) + '</span>' +
@@ -67,6 +69,7 @@ function buildCard(c) {
       '<div class="case-card-meta">' +
         '<span class="tag tag-' + escapeHtml(c.difficulty || 'easy') + '">' + escapeHtml(c.difficulty || 'easy') + '</span>' +
         '<span class="tag tag-category">' + escapeHtml(c.category || '') + '</span>' +
+        arcTag +
       '</div>' +
     '</div>' +
     '<span class="case-card-arrow" aria-hidden="true">-&gt;</span>';

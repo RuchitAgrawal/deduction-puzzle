@@ -175,6 +175,7 @@
 .tag-medium   { color: var(--amber-light); background: var(--amber-bg);  border-color: var(--amber-border); }
 .tag-hard     { color: var(--red);    background: var(--red-bg);    border-color: var(--red-border); }
 .tag-category { color: var(--text-muted); background: transparent; border-color: var(--border-default); }
+.tag-arc      { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.3); }
 
 .case-card-arrow {
   color: var(--text-muted);
