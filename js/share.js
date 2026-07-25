@@ -14,21 +14,24 @@ function setupShareButton(correct, timeRemaining, timeTaken) {
   var url = window.location.origin + (rawId ? ('/?id=' + encodeURIComponent(rawId)) : '');
   var hintUsed = state.hintUsed;
   var streak = typeof getStreak === 'function' ? getStreak() : 0;
+  var rank = typeof getPlayerRank === 'function' ? getPlayerRank() : { icon: '🔍', title: 'Cadet' };
+  var isHardcore = state.hardcoreMode;
 
   var lines = [];
-  lines.push('🕵️ DETECTIVE REPORT • ' + displayId);
+  lines.push((isHardcore ? '💀 HARDCORE REPORT • ' : '🕵️ DETECTIVE REPORT • ') + displayId);
   lines.push('━━━━━━━━━━━━━━━━━━━━');
   lines.push('📁 "' + caseTitle + '"');
+  lines.push('🏅 RANK: ' + rank.icon + ' ' + rank.title);
 
   if (correct) {
-    lines.push('🟩 STATUS: SOLVED!');
+    lines.push('🟩 STATUS: SOLVED!' + (isHardcore ? ' (Hardcore 💀)' : ''));
     lines.push('⏱️ TIME TAKEN: ' + timeTaken + 's');
     lines.push('💡 HINTS: ' + (hintUsed ? 'Used' : '0 (Clean Solve 🎯)'));
     if (streak >= 1) {
       lines.push('🔥 STREAK: ' + streak + '-case');
     }
   } else {
-    lines.push('🟥 STATUS: COLD CASE');
+    lines.push('🟥 STATUS: COLD CASE' + (isHardcore ? ' (Hardcore 💀)' : ''));
     lines.push('⏱️ TIME: Time Out');
     lines.push('💡 HINTS: ' + (hintUsed ? 'Used' : 'None'));
   }
