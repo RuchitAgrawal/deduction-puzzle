@@ -37,6 +37,8 @@
         <div class="header-left">
           <span class="logo">Deduction</span>
           <span id="case-id-badge" class="case-badge">CASE-001</span>
+          <span id="arc-badge" class="arc-badge hidden"></span>
+          <span class="academy-drill-badge">Preliminary Academy Drill</span>
         </div>
         <div id="timer" class="timer timer-green" role="timer" aria-label="Time remaining">3:00</div>
       </header>
@@ -93,21 +95,32 @@
           <p id="result-explanation" class="result-explanation-text"></p>
         </div>
 
+        <div id="community-stats" class="community-stats-box hidden" aria-live="polite">
+          <div class="stats-header">📊 Daily Detective Intel</div>
+          <p id="stats-content" class="stats-content-text"></p>
+        </div>
+
+        <div id="achievement-banner" class="achievement-banner hidden" aria-live="polite">
+          <div class="achievement-title">🏅 ACADEMY ACHIEVEMENT UNLOCKED: Field Readiness Verified</div>
+          <p class="achievement-sub">Your analytical precision qualifies you for Live Agent Cross-Examination.</p>
+        </div>
+
         <div class="bridge-cta" role="complementary">
+          <p id="epilogue-text" class="epilogue-text hidden"></p>
           <p id="bridge-text" class="bridge-text"></p>
           <a
             id="tlq-link"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
-            class="tlq-btn"
+            class="tlq-btn pulse-glow-btn"
             aria-label="Try The Last Question"
-          >Investigate Deeper</a>
+          >🎙️ Open Interrogation Room →</a>
         </div>
 
         <div class="result-actions">
-          <button id="share-btn" class="btn-secondary" type="button">Share result</button>
-          <a id="next-case-link" href="/" class="btn-outline">Next case</a>
+          <button id="share-btn" class="btn-secondary" type="button">📋 Share Case Report</button>
+          <a id="next-case-link" href="/archive" class="btn-outline">🗃️ Past Cases</a>
         </div>
       </div>
     </div>

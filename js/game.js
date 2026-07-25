@@ -9,8 +9,8 @@
 // ---- Constants ---------------------------------------------------------------
 
 var TIMER_SECONDS = 180; // 3 minutes
-var TLQ_URL = 'https://thelastquestion.com'; // placeholder until real URL is provided
-var TLQ_UTM = '?utm_source=deduction-puzzle&utm_medium=result-cta&utm_campaign=bridge';
+var TLQ_URL = 'https://thelastquestion.io';
+var TLQ_UTM = '?utm_source=puzzle&utm_medium=sidegame&utm_campaign=deduction';
 
 // ---- State -------------------------------------------------------------------
 
