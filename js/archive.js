@@ -18,7 +18,22 @@ document.addEventListener('DOMContentLoaded', function () {
 function loadAllCases() {
   return fetch('/data/cases.json')
     .then(function (res) { return res.json(); })
-    .then(function (data) { return data.cases || []; })
+    .then(function (data) {
+      var all = data.cases || [];
+      var schedule = data.schedule || {};
+      var today = new Date().toISOString().slice(0, 10);
+
+      var dateById = {};
+      Object.keys(schedule).forEach(function (date) {
+        dateById[schedule[date]] = date;
+      });
+
+      // Only display past and currently released cases
+      return all.filter(function (c) {
+        var releaseDate = dateById[c.id];
+        return releaseDate && releaseDate <= today;
+      });
+    })
     .catch(function () { return []; });
 }
 

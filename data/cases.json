@@ -419,6 +419,111 @@
       "hint": "Two people had access to the sedative. Only one had contact with the coffee before it was delivered.",
       "difficulty": "medium",
       "category": "theft"
+    },
+    {
+      "id": "case-021",
+      "title": "The Vault Diamond",
+      "intro": "An unmounted diamond disappeared from an import dealer's high-security vault during the mid-day break. The vault requires both a physical passkey and a six-digit personal code to access. Three trusted employees remained in the building during the break.",
+      "suspects": [
+        { "name": "Elena Vance",  "description": "Senior jeweler who frequently handles raw imports in the examination room." },
+        { "name": "Greg Kincaid", "description": "Inventory supervisor responsible for monthly diamond vaults audits." },
+        { "name": "Martin Ochs",  "description": "New security trainee who monitored the surveillance desk during lunchtime." }
+      ],
+      "clues": [
+        "The vault electronic logs record Greg Kincaid's six-digit personal code opening the door at 1:15 PM.",
+        "Surveillance cameras confirm Greg Kincaid sat eating lunch with two visiting auditors in the glass-walled cafeteria from 12:45 PM to 1:45 PM.",
+        "Martin Ochs does not have access to any physical vault passkeys, which were kept inside an admin lockbox that showed no unauthorized entries.",
+        "Elena Vance was in possession of her physical vault passkey all afternoon and had previously assisted Greg Kincaid in setting his personal code."
+      ],
+      "solution": "Elena Vance",
+      "explanation": "Greg's personal code opened the vault, but surveillance confirms he was in the cafeteria with external auditors at the time of the theft. Martin lacked access to any physical passkeys needed to unlock the door. Elena had both her physical passkey and knowledge of Greg's personal code, making her the only suspect able to enter the vault during the break.",
+      "hint": "Someone used another employee's digital credentials while that employee had a solid alibi.",
+      "difficulty": "easy",
+      "category": "theft"
+    },
+    {
+      "id": "case-022",
+      "title": "The Penthouse Fall",
+      "intro": "A property developer fell from the balcony of his forty-second-floor penthouse late on a Saturday evening. Forensics determined he was unconscious from a powerful sedative before he went over the railing. Three people visited the penthouse during the hours leading up to the fall.",
+      "suspects": [
+        { "name": "Diane Sterling", "description": "Business partner who recently disagreed with the developer over a stalled municipal zoning vote." },
+        { "name": "Julian Thorne",  "description": "Personal physician who frequently visited the residence for routine checkups." },
+        { "name": "Lucas Brandt",   "description": "Architect whose flagship design had been abruptly cancelled by the victim earlier that week." }
+      ],
+      "clues": [
+        "The building lobby records and elevator camera footage confirm Julian Thorne left the building at 6:00 PM and never returned.",
+        "The forensic toxicology report proves the sedative was consumed by the victim between 8:30 PM and 9:00 PM.",
+        "Lucas Brandt arrived at 8:00 PM but was confined to the main downstairs lobby waiting room until 9:30 PM by security staff.",
+        "Diane Sterling took the private elevator directly to the penthouse floor at 8:15 PM and remained inside until 9:45 PM."
+      ],
+      "solution": "Diane Sterling",
+      "explanation": "Julian left the building more than two hours before the sedative was ingested. Lucas arrived at 8:00 PM but remained downstairs in the lobby waiting room under security observation during the entire poisoning window. Diane was the only suspect inside the penthouse between 8:30 PM and 9:00 PM when the sedative was consumed.",
+      "hint": "Determine which visitor was actually inside the penthouse during the half-hour window when the drug was administered.",
+      "difficulty": "easy",
+      "category": "murder"
+    },
+    {
+      "id": "case-023",
+      "title": "The Altered Shipment",
+      "intro": "A container of high-end electronics arriving at a port customs checkpoint was diverted to an off-the-books warehouse. The clearance manifest had been digitally forged to bypass customs inspection. Three supply chain specialists had administrative database privileges that week.",
+      "suspects": [
+        { "name": "Victor Solis", "description": "Port compliance officer who inspects cargo manifests before vessel arrival." },
+        { "name": "Nora Lind",    "description": "Senior logistics manager whose departmental password was used to alter the shipment record." },
+        { "name": "Tarek Halaby", "description": "Systems database contractor hired to upgrade port clearance software." }
+      ],
+      "clues": [
+        "The fraudulent manifest modification was pushed to the server from terminal four in the customs administrative annex at 10:45 PM.",
+        "Nora Lind was across the continent attending a maritime trade conference, with flights and hotel check-ins verifying her absence.",
+        "Terminal four is located inside a biometric secure zone. Access logs from 10:00 PM to midnight show entry by Victor Solis and zero entries by any external contractors.",
+        "Tarek Halaby's badge history shows he exited the main port perimeter gates at 5:30 PM."
+      ],
+      "solution": "Victor Solis",
+      "explanation": "Nora's absence across the continent proves her credentials were compromised and used by someone on site. Tarek exited the port grounds at 5:30 PM and lacked entry into the biometric secure zone. Victor was inside the terminal four biometric zone during the exact time the fraudulent modification was transmitted from that workstation.",
+      "hint": "A manager's password was used on an internal workstation while she was traveling out of town.",
+      "difficulty": "medium",
+      "category": "deception"
+    },
+    {
+      "id": "case-024",
+      "title": "The Midnight Sabotage",
+      "intro": "The central automated loom at a high-tech textile manufacturing facility was jammed during the overnight shift, destroying thousands of meters of synthetic fiber. An internal diagnostic log revealed the emergency override levers had been wedged intentionally. Three night technicians were on the factory floor.",
+      "suspects": [
+        { "name": "Simon Jukes", "description": "Lead loom operator facing disciplinary action over previous equipment negligence." },
+        { "name": "Clara Beck",  "description": "Quality control inspector who had reported multiple maintenance anomalies that month." },
+        { "name": "Ivan Mercer", "description": "Junior apprentice assigned to clean and reload spool stations during shift changes." }
+      ],
+      "clues": [
+        "The diagnostic telemetry indicates the mechanical jam was triggered precisely between 2:10 AM and 2:15 AM.",
+        "Clara Beck spent from 1:45 AM to 2:30 AM inside the clean-room testing booth with two visiting chemical suppliers.",
+        "Simon Jukes slipped on a wet floor at 1:50 AM and was receiving medical attention from the on-site nurse until 2:40 AM.",
+        "Ivan Mercer signed out a toolkit containing the specific precision wedges used to jam the levers at 1:30 AM."
+      ],
+      "solution": "Ivan Mercer",
+      "explanation": "Clara has a confirmed alibi inside the testing booth with external suppliers during the sabotage window. Simon was documented in the infirmary with the on-site nurse between 1:50 AM and 2:40 AM. Ivan was the only technician unaccounted for on the floor at 2:10 AM and had signed out the exact tool wedges used to paralyze the loom.",
+      "hint": "Check the exact whereabouts of each technician during the five-minute mechanical error window.",
+      "difficulty": "easy",
+      "category": "alibi"
+    },
+    {
+      "id": "case-025",
+      "title": "The Rare Botanical",
+      "intro": "A specimen of an endangered orchid valued by private collectors was cut from its climate-controlled greenhouse enclosure overnight. The greenhouse features humidity alarms and sealed airlock doors. Three researchers had clearance to access the botanical garden after dark.",
+      "suspects": [
+        { "name": "Dr. Aris Thorne", "description": "Head botanist who personally cultivated the orchid specimen over four years." },
+        { "name": "Mona Chen",       "description": "Visiting pharmacologist studying therapeutic extracts from rare flowering species." },
+        { "name": "Walter Gable",    "description": "Facilities engineer responsible for monitoring temperature and ventilation calibrations." }
+      ],
+      "clues": [
+        "The airlock access system recorded an entry at 3:15 AM using Dr. Aris Thorne's security fob.",
+        "Dr. Aris Thorne was admitted to an emergency surgical ward at 1:00 AM after suffering acute appendicitis and remained hospitalized until morning.",
+        "Walter Gable was performing maintenance on the main boiler house three miles across campus between 2:00 AM and 4:30 AM, confirmed by continuous telemetry and boiler logs.",
+        "Mona Chen shared an office with Dr. Aris Thorne where his spare security fob was kept in an unlocked desk drawer."
+      ],
+      "solution": "Mona Chen",
+      "explanation": "Dr. Thorne was hospitalized for surgery hours before his fob was used to access the greenhouse. Walter Gable was working three miles away at the boiler house with continuous logs confirming his position. Mona Chen had direct access to Thorne's spare security fob in their shared office and was the only cleared individual without an alibi during the 3:15 AM break-in.",
+      "hint": "The security fob used at 3:15 AM belonged to someone who was incapacitated in a hospital.",
+      "difficulty": "medium",
+      "category": "theft"
     }
   ],
   "schedule": {
@@ -441,6 +546,11 @@
     "2026-08-08": "case-017",
     "2026-08-09": "case-018",
     "2026-08-10": "case-019",
-    "2026-08-11": "case-020"
+    "2026-08-11": "case-020",
+    "2026-08-12": "case-021",
+    "2026-08-13": "case-022",
+    "2026-08-14": "case-023",
+    "2026-08-15": "case-024",
+    "2026-08-16": "case-025"
   }
 }
