@@ -389,6 +389,57 @@ body::before {
   overflow: hidden;
 }
 
+/* Interactive Suspect Scratchpad */
+.suspect-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: var(--sp-2);
+}
+
+.eliminate-btn {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  background: transparent;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  font-family: var(--font-mono);
+}
+
+.eliminate-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--red);
+  border-color: var(--border-strong);
+}
+
+.eliminate-btn.active {
+  background: var(--bg-card-hover);
+  color: var(--amber);
+  border-color: var(--amber-border);
+}
+
+.suspect-card.eliminated {
+  opacity: 0.45;
+  background: var(--bg-app);
+  border-style: dashed;
+  transform: none !important;
+}
+
+.suspect-card.eliminated .suspect-name {
+  text-decoration: line-through;
+  color: var(--text-tertiary);
+}
+
+.suspect-card.eliminated .suspect-avatar {
+  background: transparent;
+  color: var(--text-tertiary);
+  border-color: var(--border-subtle);
+}
+
 /* Clues list */
 .clues-list {
   list-style: none;
@@ -428,6 +479,50 @@ body::before {
   justify-content: center;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+/* Interactive Clue Highlighting */
+.interactive-clue {
+  cursor: pointer;
+  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.interactive-clue:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  transform: translateX(2px);
+}
+
+.clue-text {
+  flex: 1;
+}
+
+.clue-status-badge {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: var(--green);
+  background: var(--green-bg, rgba(16, 185, 129, 0.15));
+  border: 1px solid var(--green-border, rgba(16, 185, 129, 0.3));
+  padding: 2px 6px;
+  border-radius: var(--r-sm);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity var(--t-fast), transform var(--t-fast);
+  pointer-events: none;
+}
+
+.clue-item.highlighted-clue {
+  background: var(--bg-card-hover);
+  border-color: var(--green, #10b981);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
+}
+
+.clue-item.highlighted-clue .clue-status-badge {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Hint area */
