@@ -58,6 +58,40 @@
   line-height: 1.6;
 }
 
+.hardcore-toggle-bar {
+  margin-top: var(--sp-4);
+}
+
+.hardcore-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+
+.hardcore-switch:hover {
+  border-color: #ef4444;
+}
+
+.hardcore-switch input[type="checkbox"] {
+  accent-color: #ef4444;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.hardcore-label-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* Filters */
 .archive-filters {
   display: flex;

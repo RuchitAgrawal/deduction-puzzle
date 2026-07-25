@@ -53,9 +53,13 @@ function renderGrid(cases) {
 }
 
 function buildCard(c) {
+  var isHardcore = document.getElementById('hardcore-toggle') && document.getElementById('hardcore-toggle').checked;
+  var param = isHardcore ? '&hardcore=1' : '&practice=1';
+
   var link = document.createElement('a');
   link.className = 'case-card';
-  link.href = '/?id=' + encodeURIComponent(c.id) + '&practice=1';
+  link.href = '/?id=' + encodeURIComponent(c.id) + param;
+  link.dataset.id = c.id;
   link.dataset.difficulty = c.difficulty || '';
   link.dataset.category   = c.category || '';
   link.setAttribute('aria-label', c.title + ', ' + c.difficulty + ' difficulty, ' + c.category);
@@ -78,6 +82,19 @@ function buildCard(c) {
 }
 
 function setupFilters() {
+  var toggle = document.getElementById('hardcore-toggle');
+  if (toggle) {
+    toggle.addEventListener('change', function () {
+      var isHardcore = toggle.checked;
+      document.querySelectorAll('.case-card').forEach(function (card) {
+        var id = card.dataset.id;
+        if (id) {
+          card.href = '/?id=' + encodeURIComponent(id) + (isHardcore ? '&hardcore=1' : '&practice=1');
+        }
+      });
+    });
+  }
+
   document.querySelectorAll('.filter-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
       document.querySelectorAll('.filter-btn').forEach(function (b) {
