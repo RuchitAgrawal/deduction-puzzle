@@ -19,7 +19,9 @@
       "explanation": "Gerald's alibi is confirmed by the security log. Diana had no after-hours keycard activity. Claire's keycard placed her inside the building during the estimated time of death, directly contradicting her alibi. The unlatched window explains how she exited a room locked from the inside.",
       "hint": "Check who was provably inside the building after midnight.",
       "difficulty": "easy",
-      "category": "deception"
+      "category": "deception",
+      "arc": "The Syndicate File • Part 1",
+      "epilogue": "Intel confirms the missing ledger contains encrypted transactions linking Hartley and Sons to an overseas operative network. Our field interrogator is preparing to cross-examine Claire Sutton."
     },
     {
       "id": "case-002",
@@ -40,7 +42,9 @@
       "explanation": "Sol was confirmed off-site hours before the theft window. Tara never entered the building. The absence of tool marks means the safe was opened with the combination, not forced. Ray was the only person present who knew the code and was unaccounted for during the relevant window.",
       "hint": "A safe with no tool marks was opened by someone who already knew the code.",
       "difficulty": "easy",
-      "category": "theft"
+      "category": "theft",
+      "arc": "The Syndicate File • Part 2",
+      "epilogue": "The recovered diamonds match shipments documented in the missing Hartley ledger. Ray Kowalski was acting under external orders from a shadowy handler."
     },
     {
       "id": "case-003",
