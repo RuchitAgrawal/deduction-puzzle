@@ -496,6 +496,7 @@ function showResultScreen(correct, timeRemaining, timedOut) {
   }
 
   setupShareButton(correct, timeRemaining, timeTaken);
+  setupTranscriptModal();
   trackEvent('result_seen', { case_id: state.currentCase.id, correct: correct });
   showScreen('screen-result');
 }
@@ -575,4 +576,33 @@ function logAttempt(payload) {
   }).catch(function () {
     // Non-critical; ignore network failures
   });
+}
+
+// ---- Intercepted Transcript Modal -------------------------------------------
+
+function setupTranscriptModal() {
+  var link = document.getElementById('tlq-link');
+  var modal = document.getElementById('transcript-modal');
+  var cancelBtn = document.getElementById('transcript-cancel-btn');
+  var backdrop = document.getElementById('transcript-backdrop');
+
+  if (link && modal && !link.dataset.modalBound) {
+    link.dataset.modalBound = '1';
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.classList.remove('hidden');
+      if (typeof playClickSound === 'function') playClickSound();
+    });
+
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', function () {
+        modal.classList.add('hidden');
+      });
+    }
+    if (backdrop) {
+      backdrop.addEventListener('click', function () {
+        modal.classList.add('hidden');
+      });
+    }
+  }
 }
