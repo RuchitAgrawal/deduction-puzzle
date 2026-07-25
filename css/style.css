@@ -240,6 +240,31 @@ body::before {
   letter-spacing: 0.04em;
 }
 
+.arc-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2px 7px;
+  border-radius: var(--r-full);
+  letter-spacing: 0.04em;
+}
+
+.academy-drill-badge {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 2px 8px;
+  border-radius: var(--r-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* Timer */
 .timer {
   font-family: var(--font-mono);
@@ -850,6 +875,93 @@ body::before {
 .tlq-btn:hover {
   background: var(--amber-light);
   transform: translateY(-1px);
+}
+
+/* Community Stats and Academy Banners */
+.community-stats-box {
+  background: var(--bg-card);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  animation: fade-up 0.35s 0.22s ease both;
+}
+
+.stats-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stats-content-text {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.achievement-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.05) 100%);
+  border: 1px solid var(--amber-border);
+  border-radius: var(--r-md);
+  padding: var(--sp-4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: fade-up 0.35s 0.24s ease both;
+}
+
+.achievement-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--amber-light);
+  letter-spacing: 0.02em;
+}
+
+.achievement-sub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.epilogue-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--amber-light);
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 3px solid var(--amber);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Glowing Pulsating TLQ CTA Button */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.35), 0 0 20px rgba(16, 185, 129, 0.15); }
+  50% { box-shadow: 0 0 18px rgba(16, 185, 129, 0.65), 0 0 32px rgba(16, 185, 129, 0.35); }
+  100% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.35), 0 0 20px rgba(16, 185, 129, 0.15); }
+}
+
+.pulse-glow-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid #34d399 !important;
+  animation: pulse-glow 2.5s infinite ease-in-out;
+  transition: transform var(--t-fast), background var(--t-fast), box-shadow var(--t-fast) !important;
+}
+
+.pulse-glow-btn:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.8), 0 0 40px rgba(16, 185, 129, 0.4) !important;
 }
 
 /* Result actions */
