@@ -21,14 +21,21 @@ var state = {
   timerInterval:   null,
   hintUsed:        false,
   sessionId:       null,
-  practiceMode:    false, // set to true when ?practice=1 is in the URL
+  practiceMode:    false,
+  hardcoreMode:    false,
 };
 
 // ---- Init --------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-  state.sessionId   = getOrCreateSessionId();
+  state.sessionId    = getOrCreateSessionId();
   state.practiceMode = new URLSearchParams(window.location.search).get('practice') === '1';
+  state.hardcoreMode = new URLSearchParams(window.location.search).get('hardcore') === '1';
+
+  if (state.hardcoreMode) {
+    TIMER_SECONDS = 90;
+    state.timeRemaining = 90;
+  }
 
   if (typeof updateHeaderRankBadge === 'function') updateHeaderRankBadge();
   if (typeof setupRankModal === 'function') setupRankModal();
@@ -154,12 +161,14 @@ function renderCase(caseData) {
   renderSuspects(caseData.suspects);
   renderClues(caseData.clues);
 
-  if (caseData.hint) {
+  if (caseData.hint && !state.hardcoreMode) {
     document.getElementById('hint-area').classList.remove('hidden');
   }
 
   if (state.practiceMode) {
     document.getElementById('case-id-badge').textContent += ' (Practice)';
+  } else if (state.hardcoreMode) {
+    document.getElementById('case-id-badge').textContent += ' (💀 Hardcore)';
   }
 }
 
