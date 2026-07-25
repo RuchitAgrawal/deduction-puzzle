@@ -34,7 +34,9 @@ OUTPUT FORMAT: valid JSON only, no commentary, matching this exact schema:
   "explanation": "Two to three sentences explaining why the clues point to the culprit and eliminate the others.",
   "hint": "One sentence pointing toward a productive line of reasoning without naming the culprit.",
   "difficulty": "easy",
-  "category": "[theme]"
+  "category": "[theme]",
+  "arc": "Optional short title for a connected story series",
+  "epilogue": "Optional follow-up twist or interrogation prelude after solving"
 }
 
 RULES (follow all of them):
