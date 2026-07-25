@@ -156,20 +156,57 @@ function renderSuspects(suspects) {
   grid.innerHTML = '';
 
   suspects.forEach(function (suspect) {
-    var btn = document.createElement('button');
-    btn.className = 'suspect-card';
-    btn.dataset.name = suspect.name;
-    btn.type = 'button';
-    btn.setAttribute('aria-pressed', 'false');
-    btn.innerHTML =
+    var card = document.createElement('div');
+    card.className = 'suspect-card';
+    card.dataset.name = suspect.name;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-pressed', 'false');
+
+    card.innerHTML =
       '<div class="suspect-avatar" aria-hidden="true">' + escapeHtml(suspect.name.charAt(0)) + '</div>' +
       '<div class="suspect-info">' +
-        '<span class="suspect-name">' + escapeHtml(suspect.name) + '</span>' +
+        '<div class="suspect-header-row">' +
+          '<span class="suspect-name">' + escapeHtml(suspect.name) + '</span>' +
+          '<button class="eliminate-btn" type="button" title="Toggle elimination">✕ Eliminate</button>' +
+        '</div>' +
         '<span class="suspect-desc">' + escapeHtml(suspect.description) + '</span>' +
       '</div>';
-    btn.addEventListener('click', function () { selectSuspect(suspect.name); });
-    grid.appendChild(btn);
+
+    card.addEventListener('click', function (e) {
+      if (e.target.classList.contains('eliminate-btn') || e.target.closest('.eliminate-btn')) {
+        e.stopPropagation();
+        toggleEliminated(card);
+        return;
+      }
+      selectSuspect(suspect.name);
+    });
+
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectSuspect(suspect.name);
+      }
+    });
+
+    grid.appendChild(card);
   });
+}
+
+function toggleEliminated(card) {
+  var isEliminated = card.classList.toggle('eliminated');
+  var btn = card.querySelector('.eliminate-btn');
+  if (btn) {
+    btn.textContent = isEliminated ? '↺ Restore' : '✕ Eliminate';
+    btn.classList.toggle('active', isEliminated);
+  }
+  if (isEliminated && card.classList.contains('selected')) {
+    card.classList.remove('selected');
+    card.setAttribute('aria-pressed', 'false');
+    state.selectedSuspect = null;
+    document.getElementById('selected-label').textContent = 'Select a suspect above';
+    document.getElementById('accuse-btn').disabled = true;
+  }
 }
 
 function renderClues(clues) {
@@ -177,11 +214,30 @@ function renderClues(clues) {
   list.innerHTML = '';
   clues.forEach(function (clue) {
     var li = document.createElement('li');
-    li.className = 'clue-item';
-    li.textContent = clue;
+    li.className = 'clue-item interactive-clue';
+    li.setAttribute('role', 'button');
+    li.setAttribute('tabindex', '0');
+    li.setAttribute('title', 'Click to mark evidence as verified');
+
+    li.innerHTML =
+      '<span class="clue-text">' + escapeHtml(clue) + '</span>' +
+      '<span class="clue-status-badge" aria-hidden="true">✓ Verified</span>';
+
+    li.addEventListener('click', function () {
+      li.classList.toggle('highlighted-clue');
+    });
+
+    li.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        li.classList.toggle('highlighted-clue');
+      }
+    });
+
     list.appendChild(li);
   });
 }
+
 
 // ---- Suspect selection -------------------------------------------------------
 
