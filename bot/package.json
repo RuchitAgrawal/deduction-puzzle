@@ -1,0 +1,27 @@
+{
+  "name": "deduction-puzzle-bot",
+  "version": "1.0.0",
+  "description": "Telegram and Discord bots for the Deduction Puzzle daily investigative game",
+  "main": "index.js",
+  "scripts": {
+    "start:telegram":  "node telegram/index.js",
+    "start:discord":   "node discord/index.js",
+    "deploy:discord":  "node discord/deploy-commands.js",
+    "dev:telegram":    "nodemon telegram/index.js",
+    "dev:discord":     "nodemon discord/index.js",
+    "dev:all":         "concurrently \"npm run dev:telegram\" \"npm run dev:discord\""
+  },
+  "dependencies": {
+    "grammy":              "^1.30.0",
+    "discord.js":          "^14.16.0",
+    "@discordjs/rest":     "^2.4.0",
+    "discord-api-types":   "^0.37.97",
+    "better-sqlite3":      "^11.0.0",
+    "node-cron":           "^3.0.3",
+    "dotenv":              "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon":             "^3.1.0",
+    "concurrently":        "^8.2.2"
+  }
+}
