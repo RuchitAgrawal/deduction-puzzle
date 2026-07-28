@@ -166,9 +166,9 @@ function renderCase(caseData) {
   }
 
   if (state.practiceMode) {
-    document.getElementById('case-id-badge').textContent += ' (Practice)';
+    document.getElementById('case-id-badge').textContent += ' [PRACTICE ARCHIVE]';
   } else if (state.hardcoreMode) {
-    document.getElementById('case-id-badge').textContent += ' (💀 Hardcore)';
+    document.getElementById('case-id-badge').textContent += ' [HARDCORE CHALLENGE]';
   }
 }
 
@@ -189,7 +189,7 @@ function renderSuspects(suspects) {
       '<div class="suspect-info">' +
         '<div class="suspect-header-row">' +
           '<span class="suspect-name">' + escapeHtml(suspect.name) + '</span>' +
-          '<button class="eliminate-btn" type="button" title="Toggle elimination">✕ Eliminate</button>' +
+          '<button class="eliminate-btn" type="button" title="Toggle elimination">Eliminate</button>' +
         '</div>' +
         '<span class="suspect-desc">' + escapeHtml(suspect.description) + '</span>' +
       '</div>';
@@ -223,7 +223,7 @@ function toggleEliminated(card) {
   }
   var btn = card.querySelector('.eliminate-btn');
   if (btn) {
-    btn.textContent = isEliminated ? '↺ Restore' : '✕ Eliminate';
+    btn.textContent = isEliminated ? 'Restore' : 'Eliminate';
     btn.classList.toggle('active', isEliminated);
   }
   if (isEliminated && card.classList.contains('selected')) {
@@ -246,13 +246,13 @@ function renderClues(clues) {
     li.setAttribute('role', 'region');
     li.setAttribute('aria-label', 'Evidence piece ' + (idx + 1));
 
-    var optionsHtml = '<option value="">📌 Link Evidence...</option>' +
-                      '<option value="motive">⚡ Motive Confirmed</option>' +
-                      '<option value="alibi">🛡️ Alibi Verified</option>' +
-                      '<option value="lie">🚨 Contradiction Found</option>';
+    var optionsHtml = '<option value="">Link Evidence...</option>' +
+                      '<option value="motive">[Motive] Confirmed</option>' +
+                      '<option value="alibi">[Alibi] Verified</option>' +
+                      '<option value="lie">[Contradiction] Identified</option>';
 
     suspects.forEach(function (s) {
-      optionsHtml += '<option value="' + escapeHtml(s.name) + '">👤 Implicates ' + escapeHtml(s.name) + '</option>';
+      optionsHtml += '<option value="' + escapeHtml(s.name) + '">[Suspect] Implicates ' + escapeHtml(s.name) + '</option>';
     });
 
     li.innerHTML =
@@ -261,7 +261,7 @@ function renderClues(clues) {
       '</div>' +
       '<div class="clue-actions-row">' +
         '<select class="clue-tag-select" aria-label="Tag evidence with analysis">' + optionsHtml + '</select>' +
-        '<button class="clue-verify-btn" type="button" title="Mark as verified">✓ Verify</button>' +
+        '<button class="clue-verify-btn" type="button" title="Mark as verified">Verify</button>' +
       '</div>';
 
     var selectEl = li.querySelector('.clue-tag-select');
@@ -282,7 +282,7 @@ function renderClues(clues) {
       e.stopPropagation();
       li.classList.toggle('highlighted-clue');
       var verified = li.classList.contains('highlighted-clue');
-      verifyBtn.textContent = verified ? '✓ Verified' : '✓ Verify';
+      verifyBtn.textContent = verified ? '[Verified]' : 'Verify';
       verifyBtn.classList.toggle('active', verified);
       if (typeof playClickSound === 'function') playClickSound();
     });
