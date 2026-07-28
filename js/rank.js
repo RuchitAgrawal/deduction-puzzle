@@ -4,11 +4,11 @@
  */
 
 var RANKS = [
-  { threshold: 0,  title: 'Cadet',             icon: '🔍', level: 1, next: 1 },
-  { threshold: 1,  title: 'Field Analyst',     icon: '📊', level: 2, next: 3 },
-  { threshold: 3,  title: 'Lead Interrogator', icon: '🕵️', level: 3, next: 7 },
-  { threshold: 7,  title: 'Special Agent',     icon: '🕶️', level: 4, next: 15 },
-  { threshold: 15, title: 'Master Detective',  icon: '🏆', level: 5, next: 999 }
+  { threshold: 0,  title: 'Cadet',             icon: 'I',   level: 1, next: 1,   tier: 'Tier I' },
+  { threshold: 1,  title: 'Field Analyst',     icon: 'II',  level: 2, next: 3,   tier: 'Tier II' },
+  { threshold: 3,  title: 'Lead Interrogator', icon: 'III', level: 3, next: 7,   tier: 'Tier III' },
+  { threshold: 7,  title: 'Special Agent',     icon: 'IV',  level: 4, next: 15,  tier: 'Tier IV' },
+  { threshold: 15, title: 'Master Detective',  icon: 'V',   level: 5, next: 999, tier: 'Tier V' }
 ];
 
 function getPlayerStats() {
@@ -76,7 +76,7 @@ function updateHeaderRankBadge() {
   if (!badge) return;
 
   var rank = getPlayerRank();
-  badge.innerHTML = '<span>' + rank.icon + ' ' + escapeHtml(rank.title) + '</span>';
+  badge.innerHTML = '<span>' + rank.tier + ' • ' + escapeHtml(rank.title) + '</span>';
 }
 
 function setupRankModal() {
@@ -114,7 +114,7 @@ function renderScorecardContent() {
   var progressTextEl = document.getElementById('profile-progress-text');
   var progressBarEl = document.getElementById('profile-progress-bar');
   
-  if (titleEl) titleEl.textContent = rank.title;
+  if (titleEl) titleEl.textContent = rank.tier + ' • ' + rank.title;
   if (iconEl) iconEl.textContent = rank.icon;
 
   var nextTarget = rank.next;
