@@ -11,48 +11,49 @@
    Design tokens
    ============================================================ */
 :root {
-  /* Backgrounds */
-  --bg-base:       #09090e;
-  --bg-surface:    #0f0f16;
-  --bg-card:       #14141c;
-  --bg-card-hover: #1a1a24;
-  --bg-elevated:   #1e1e28;
+  /* Backgrounds (Obsidian neutral theme matching The Last Question) */
+  --bg-base:       #0b0c0e;
+  --bg-surface:    #111317;
+  --bg-card:       #15181e;
+  --bg-card-hover: #1b1f28;
+  --bg-elevated:   #20242e;
 
-  /* Borders */
-  --border-subtle:  #18181f;
-  --border-default: #22222e;
-  --border-strong:  #2e2e3c;
+  /* Borders (Translucent high-contrast lines) */
+  --border-subtle:  rgba(255, 255, 255, 0.07);
+  --border-default: rgba(255, 255, 255, 0.13);
+  --border-strong:  rgba(255, 255, 255, 0.22);
 
   /* Text */
-  --text-primary:   #eeeef6;
-  --text-secondary: #7070a0;
-  --text-muted:     #3c3c50;
+  --text-primary:   #f4f4f7;
+  --text-secondary: #8b929f;
+  --text-muted:     #4d535e;
 
-  /* Amber (primary accent) */
-  --amber:          #c89820;
-  --amber-light:    #e8b030;
-  --amber-bg:       rgba(200, 152, 32, 0.08);
-  --amber-border:   rgba(200, 152, 32, 0.25);
+  /* Amber (Editorial golden primary accent) */
+  --amber:          #e8943a;
+  --amber-light:    #f5a623;
+  --amber-bg:       rgba(232, 148, 58, 0.1);
+  --amber-border:   rgba(232, 148, 58, 0.35);
 
-  /* Green (correct) */
-  --green:          #24b860;
-  --green-bg:       rgba(36, 184, 96, 0.08);
-  --green-border:   rgba(36, 184, 96, 0.25);
+  /* Green (Correct & verified) */
+  --green:          #10b981;
+  --green-bg:       rgba(16, 185, 129, 0.1);
+  --green-border:   rgba(16, 185, 129, 0.35);
 
-  /* Red (danger / wrong) */
-  --red:            #dc3838;
-  --red-hover:      #f04040;
-  --red-bg:         rgba(220, 56, 56, 0.08);
-  --red-border:     rgba(220, 56, 56, 0.25);
+  /* Red (Danger & contradiction) */
+  --red:            #ef4444;
+  --red-hover:      #f87171;
+  --red-bg:         rgba(239, 68, 68, 0.1);
+  --red-border:     rgba(239, 68, 68, 0.35);
 
   /* Timer states */
-  --timer-green:    #24b860;
-  --timer-yellow:   #e0b030;
-  --timer-red:      #dc3838;
+  --timer-green:    #10b981;
+  --timer-yellow:   #e8943a;
+  --timer-red:      #ef4444;
 
   /* Typography */
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
 
   /* Spacing scale */
   --sp-1:  4px;
@@ -66,16 +67,16 @@
   --sp-12: 48px;
 
   /* Radii */
-  --r-sm:   6px;
-  --r-md:   10px;
-  --r-lg:   14px;
-  --r-xl:   18px;
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   12px;
+  --r-xl:   16px;
   --r-full: 9999px;
 
   /* Transitions */
-  --t-fast:    0.12s ease;
-  --t-default: 0.22s ease;
-  --t-slow:    0.38s ease;
+  --t-fast:    0.15s ease;
+  --t-default: 0.25s ease;
+  --t-slow:    0.4s ease;
 }
 
 /* ============================================================
@@ -90,22 +91,12 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-base);
+  background: var(--bg-base);
+  background-image: radial-gradient(circle at top center, rgba(232, 148, 58, 0.05) 0%, transparent 70%);
   color: var(--text-primary);
   min-height: 100dvh;
-  line-height: 1.5;
+  line-height: 1.6;
   overflow-x: hidden;
-}
-
-/* Subtle dot-grid texture */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 #app {
