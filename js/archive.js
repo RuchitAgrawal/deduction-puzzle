@@ -76,7 +76,7 @@ function buildCard(c) {
         arcTag +
       '</div>' +
     '</div>' +
-    '<span class="case-card-arrow" aria-hidden="true">-&gt;</span>';
+    '<span class="case-card-arrow" aria-hidden="true">&#8594;</span>';
 
   return link;
 }
