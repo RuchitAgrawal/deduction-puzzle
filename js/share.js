@@ -14,30 +14,30 @@ function setupShareButton(correct, timeRemaining, timeTaken) {
   var url = window.location.origin + (rawId ? ('/?id=' + encodeURIComponent(rawId)) : '');
   var hintUsed = state.hintUsed;
   var streak = typeof getStreak === 'function' ? getStreak() : 0;
-  var rank = typeof getPlayerRank === 'function' ? getPlayerRank() : { icon: '🔍', title: 'Cadet' };
+  var rank = typeof getPlayerRank === 'function' ? getPlayerRank() : { icon: 'I', title: 'Cadet', tier: 'Tier I' };
   var isHardcore = state.hardcoreMode;
 
   var lines = [];
-  lines.push((isHardcore ? '💀 HARDCORE REPORT • ' : '🕵️ DETECTIVE REPORT • ') + displayId);
-  lines.push('━━━━━━━━━━━━━━━━━━━━');
-  lines.push('📁 "' + caseTitle + '"');
-  lines.push('🏅 RANK: ' + rank.icon + ' ' + rank.title);
+  lines.push((isHardcore ? 'HARDCORE CHALLENGE REPORT // ' : 'INVESTIGATIVE CASE REPORT // ') + displayId);
+  lines.push('--------------------------------------');
+  lines.push('SUBJECT: "' + caseTitle + '"');
+  lines.push('OFFICER: ' + (rank.tier ? (rank.tier + ' • ') : '') + rank.title);
 
   if (correct) {
-    lines.push('🟩 STATUS: SOLVED!' + (isHardcore ? ' (Hardcore 💀)' : ''));
-    lines.push('⏱️ TIME TAKEN: ' + timeTaken + 's');
-    lines.push('💡 HINTS: ' + (hintUsed ? 'Used' : '0 (Clean Solve 🎯)'));
+    lines.push('VERDICT: CASE CLOSED' + (isHardcore ? ' [HARDCORE]' : ''));
+    lines.push('INVESTIGATION TIME: ' + timeTaken + 's');
+    lines.push('HINTS ACCESSED: ' + (hintUsed ? '1 (Assisted)' : '0 (Clean Solve)'));
     if (streak >= 1) {
-      lines.push('🔥 STREAK: ' + streak + '-case');
+      lines.push('CURRENT STREAK: ' + streak + ' consecutive cases');
     }
   } else {
-    lines.push('🟥 STATUS: COLD CASE' + (isHardcore ? ' (Hardcore 💀)' : ''));
-    lines.push('⏱️ TIME: Time Out');
-    lines.push('💡 HINTS: ' + (hintUsed ? 'Used' : 'None'));
+    lines.push('VERDICT: COLD CASE' + (isHardcore ? ' [HARDCORE]' : ''));
+    lines.push('TIME EXPIRED: Time out during interrogation');
+    lines.push('HINTS ACCESSED: ' + (hintUsed ? '1 (Assisted)' : 'None'));
   }
 
-  lines.push('━━━━━━━━━━━━━━━━━━━━');
-  lines.push(correct ? 'Think you can beat my time? 👇' : 'Can you crack the suspect\'s alibi? 👇');
+  lines.push('--------------------------------------');
+  lines.push(correct ? 'Compare analytical speeds in the archive:' : 'Examine the suspect testimony in the archive:');
   lines.push('');
   lines.push(url);
 
@@ -61,7 +61,7 @@ function setupShareButton(correct, timeRemaining, timeTaken) {
 
     try {
       await navigator.clipboard.writeText(cardText);
-      fresh.textContent = '✅ Case Report Copied!';
+      fresh.textContent = '[Report Copied to Clipboard]';
       fresh.disabled = true;
     } catch (_) {
       fresh.textContent = 'Copy failed';
