@@ -7,7 +7,7 @@
   <title>Deduction Puzzle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -41,8 +41,10 @@
           <span class="academy-drill-badge">Preliminary Academy Drill</span>
         </div>
         <div class="header-right">
-          <button id="header-rank-badge" class="header-rank-badge" type="button" title="View Detective Profile"><span>🔍 Cadet</span></button>
-          <button id="audio-toggle-btn" class="header-audio-btn" type="button" title="Mute sound effects"><span>🔊</span></button>
+          <button id="header-rank-badge" class="header-rank-badge" type="button" title="View Detective Profile"><span>Tier I • Cadet</span></button>
+          <button id="audio-toggle-btn" class="header-audio-btn" type="button" title="Toggle Sound">
+            <svg id="audio-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          </button>
           <div id="timer" class="timer timer-green" role="timer" aria-label="Time remaining">3:00</div>
         </div>
       </header>
@@ -148,9 +150,9 @@
       <div class="modal-backdrop" id="profile-backdrop"></div>
       <div class="modal-box profile-box">
         <div class="profile-header">
-          <div class="profile-rank-icon" id="profile-rank-icon">🔍</div>
+          <div class="profile-rank-icon" id="profile-rank-icon">I</div>
           <h2 id="profile-modal-title" class="profile-title">Detective Profile</h2>
-          <div class="profile-rank-title" id="profile-rank-title">Cadet</div>
+          <div class="profile-rank-title" id="profile-rank-title">Tier I • Cadet</div>
         </div>
         
         <div class="profile-progress-container">
@@ -203,7 +205,7 @@
         </div>
         <div class="transcript-footer">
           <p class="transcript-prompt">Your suspect awaits cross-examination on The Last Question.</p>
-          <a id="transcript-continue-btn" href="https://thelastquestion.io/?utm_source=puzzle&utm_medium=sidegame&utm_campaign=deduction" class="btn-primary pulse-glow-btn transcript-btn">Enter Interrogation Room -&gt; Continue on TLQ</a>
+          <a id="transcript-continue-btn" href="https://thelastquestion.io/?utm_source=puzzle&utm_medium=sidegame&utm_campaign=deduction" class="btn-primary transcript-btn">Enter Live Interrogation on The Last Question</a>
           <button id="transcript-cancel-btn" class="btn-outline" type="button">Close Preview</button>
         </div>
       </div>
