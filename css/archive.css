@@ -48,35 +48,38 @@
 }
 
 .archive-heading {
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
 }
 
 .archive-sub {
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .hardcore-toggle-bar {
-  margin-top: var(--sp-4);
+  margin-top: var(--sp-3);
 }
 
 .hardcore-switch {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  background: var(--bg-surface);
+  background: var(--bg-elevated);
   border: 1px solid var(--border-default);
   padding: 6px 14px;
-  border-radius: var(--r-full);
+  border-radius: var(--r-sm);
   cursor: pointer;
   user-select: none;
   transition: border-color var(--t-fast), background var(--t-fast);
 }
 
 .hardcore-switch:hover {
-  border-color: #ef4444;
+  border-color: var(--amber);
 }
 
 .hardcore-switch input[type="checkbox"] {
@@ -147,19 +150,18 @@
   justify-content: space-between;
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--r-md);
+  border-radius: var(--r-sm);
   padding: var(--sp-4) var(--sp-5);
   text-decoration: none;
   color: inherit;
   gap: var(--sp-4);
-  transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+  transition: background var(--t-fast), border-color var(--t-fast);
   -webkit-tap-highlight-color: transparent;
 }
 
 .case-card:hover {
   background: var(--bg-card-hover);
-  border-color: var(--border-default);
-  transform: translateX(2px);
+  border-color: var(--amber);
 }
 
 .case-card.hidden {
@@ -177,12 +179,14 @@
   font-family: var(--font-mono);
   font-size: 0.65rem;
   color: var(--amber);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .case-card-title {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
